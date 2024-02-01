@@ -1,10 +1,20 @@
-interface ComputerEngine{
+public interface ComputerEngine {
+
+    //* Reading, Writing, and Initialization Component *//  
+
+    // initialize a computation to be performed
+    Response initializeComputation(ComputationParameters parameters);
     // Recieve data from user
-    response fromUserData(int[] dataString);
+    Response fromUserData(int[] dataString);
+    // Send data to computation component
+    Response sendDataToCompute(Data data);
 
-    // Maipulate Data
-    response performDigitFactorial();
-
+    //* Computation Component *//   
+    
+    // Receive data from reader component
+    Data receiveDataForComputation();
+    // Manipulate Data
+    Response performDigitFactorial();
     // Return data to data manager
-    response returnDigitFactorialToUserInterface(outputURL);
+    Response returnDigitFactorialToUserInterface(outputURL);
 }
