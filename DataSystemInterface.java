@@ -1,4 +1,4 @@
-public interface DataStorageInterface {
+public interface DataSystemInterface {
     // Store data
     Response storeData(String identifier, Data data);
 
