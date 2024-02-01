@@ -3,6 +3,14 @@ public interface UserToComputerEngine{
     Response setSourceAndDest(String sourceURL, String destinationURL);
 
     // Carries out the computation of the digit factorial, with or without default delimiter
-    Response exCompDefaultDelim(Source);
-    Response exCompCustomDelim(String delim, Source);
+    Request exCompDefaultDelim(String source);
+    Request exCompCustomDelim(String delim, String source);
+}
+
+public interface Request{
+
+}
+
+public interface Response{
+
 }
