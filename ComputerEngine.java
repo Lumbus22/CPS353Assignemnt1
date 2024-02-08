@@ -5,7 +5,7 @@ public interface ComputerEngine {
   // initialize a computation to be performed
   Request initializeComputation(String parameters);
   // Recieve data from user
-  Request fromUserData(int[] dataString);
+  Data fromUserData(int[] dataString);
   // Send data to computation component
   Response sendDataToCompute(int[] dataString );
 
