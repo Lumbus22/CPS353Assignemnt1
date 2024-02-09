@@ -1,13 +1,12 @@
 public interface ComputerEngine {
-  Data receiveDataForComputation();
-  
-  // Manipulate Data
-  Request performDigitFactorial();
-  
-  // Return data to data manager
-  Response returnDigitFactorial(String outputURL);
-}
+    Data receiveDataForComputation();
 
+    // Manipulate Data
+    Request performDigitFactorial();
+
+    // Return data to data manager
+    Response returnDigitFactorial(String outputURL);
+}
 
 public class ComputerEngineImpl implements ComputerEngine {
 
@@ -27,5 +26,4 @@ public class ComputerEngineImpl implements ComputerEngine {
     public Response returnDigitFactorial(String outputURL) {
         return new Response();
     }
-} 
-
+}
