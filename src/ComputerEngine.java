@@ -1,7 +1,7 @@
 public interface ComputerEngine {
     Data receiveDataForComputation();
 
-    // Manipulate Data
+    // Manipulate Data //
     Request performDigitFactorial();
 
     // Return data to data manager
