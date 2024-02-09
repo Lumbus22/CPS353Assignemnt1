@@ -7,10 +7,23 @@ public interface UserToComputerEngine{
   Request exCompCustomDelim(String delim, String source);
 }
 
-public interface Request{
+public class UserToComputerEngineImpl implements UserToComputerEngine {
 
+  private ComputerEngine computerEngine;
+
+  @Override
+  public Response setSourceAndDest(String sourceURL, String destinationURL) {
+    return new Response();
+  }
+
+  @Override
+  public Request exCompDefaultDelim(String source) {
+    return new Request();
+  }
+
+  @Override
+  public Request exCompCustomDelim(String delim, String source) {
+   return new Request();
+  }
 }
 
-public interface Response{
-
-}
