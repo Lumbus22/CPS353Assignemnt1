@@ -23,7 +23,7 @@ public class DataSystem implements DataSystemInterface {
 
     public DataResponse retrieveData(String identifier){
         // Retrieve data
-        return RetrievedData
+        return RetrievedData;
     }
     
   @Override
