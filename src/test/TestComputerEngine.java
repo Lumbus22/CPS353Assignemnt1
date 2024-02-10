@@ -1,35 +1,31 @@
-import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
-public class ComputerEngineImplTest {
-
-    @Mock
-    private DataSystemInterface mockDataSystem;
-
-    private ComputerEngineImpl computerEngine;
-
-    @Before
-    public void setUp() {
-        MockitoAnnotations.openMocks(this);
-        computerEngine = new ComputerEngineImpl();
-        computerEngine.setDataSystem(mockDataSystem);
-    }
+public class TestComputerEngine {
 
     @Test
     public void testReceiveDataForComputation() {
-        when(mockDataSystem.retrieveData(anyString())).thenReturn(new DataResponse(new Data()));
-        Data actualData = computerEngine.receiveDataForComputation();
+        DataSystemInterface mockDataSystem = mock(DataSystemInterface.class);
+        Data expectedData = new Data();
+
+        when(mockDataSystem.retrieveData(anyString())).thenReturn(expectedData);
+
+        ComputerEngineImpl engine = new ComputerEngineImpl(mockDataSystem);
+
+        Data actualData = engine.receiveDataForComputation();
+
         assertNotNull(actualData);
+        assertEquals(expectedData, actualData);
     }
 
     @Test
     public void testPerformDigitFactorial() {
-        Request request = computerEngine.performDigitFactorial();
+        ComputerEngineImpl engine = new ComputerEngineImpl(null); // Passing null since DataSystemInterface is not used in this test
+
+        Request request = engine.performDigitFactorial();
+
         assertNotNull(request);
     }
 }
