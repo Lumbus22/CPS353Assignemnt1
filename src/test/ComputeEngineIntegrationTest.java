@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ComputeEngineIntegrationTest {
 
@@ -11,7 +12,8 @@ public class ComputeEngineIntegrationTest {
         List<Integer> inputData = List.of(1, 10, 25);
         
         String testDataIdentifier = "testData";
-        int x = computeEngine.performDigitFactorial();
+        computeEngine.returnDigitFactorial();
+        Response x = computeEngine.returnDigitFactorial();
 
         DataResponse computationResult = dataSystem.storeData(testDataIdentifier, x);
         computationResult = dataSystem.retrieveData(testDataIdentifier);
