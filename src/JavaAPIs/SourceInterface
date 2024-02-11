@@ -1,0 +1,4 @@
+public interface SourceInterface {
+  List<Integer> setInputSource();
+  setOutputSource(List<String>);
+}
