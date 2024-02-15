@@ -1,19 +1,23 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class DigitFactorialCalculator implements ComputerEngine {
 
-      public static void main() {
-        String filePath = "path_to_your_input_file.txt"; // Replace with the actual file path
+    
+    public static void main() {
+        String filePath = "path_to_your_input_file.csv"; // Replace with the actual file path
         processFile(filePath);
-    }
-}
+    }}
 
-    private DataSystemInterface dataStore;
-
+    @Override
     public Data receiveDataForComputation() {
-        return datatForComputation;
+        return dataForComputation;
     }
 
+    @Override
     public Request performDigitFactorial() {
-       return digitFactorial;
+        return digitFactorial;
     }
 
     @Override
@@ -23,7 +27,7 @@ public class DigitFactorialCalculator implements ComputerEngine {
 
   }
 
-     // Calculate the factorial for each int string
+    // Calculate the factorial for each int string
     private static long factorial(int n) {
         long result = 1;
         for (int i = 2; i <= n; i++) {
@@ -42,7 +46,20 @@ public class DigitFactorialCalculator implements ComputerEngine {
         return sum;
     }
 
-    // Read and process the file
+    // Read and process the file. Example F:\\CSVDemo.csv
     public static void processFile(String filePath) {
+      Scanner sc = new Scanner(new File(filePath));
+      String line = sc.nextLine();
+      sc.close();
 
-    }
+        String[] numberStrings = line.split(",");
+        long[][] results = new long[2][numberStrings.length];
+
+        for (int i = 0; i < numberStrings.length; i++) {
+            results[0][i] = Long.parseLong(numberStrings[i]);
+            results[1][i] = digitFactorialSum(numberStrings[i]); 
+        }
+
+        return results;
+
+}
