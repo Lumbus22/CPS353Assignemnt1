@@ -4,25 +4,40 @@ import java.util.Scanner;
 
 public class DigitFactorialCalculator implements ComputerEngine {
 
+    private String filePath;
+    private String[] numberStrings;
+
+    public DigitFactorialCalculator(String filePath) {
+        this.filePath = filePath;
+    }
     
-    public static void main() {
+    public static void main(String[] args) {
         String filePath = "path_to_your_input_file.csv"; // Replace with the actual file path
-        processFile(filePath);
+        DigitFactorialCalculator calculator = new DigitFactorialCalculator(filePath);
+        calculator.receiveDataForComputation();
+        long[][] results = calculator.performDigitFactorial();
+
     }}
 
     @Override
-    public Data receiveDataForComputation() {
-        return dataForComputation;
+    public void receiveDataForComputation() {
+            Scanner sc = new Scanner(new File(this.filePath));
+            if (sc.hasNextLine()) {
+                String line = sc.nextLine();
+                this.numberStrings = line.split(",");
+            }
+            sc.close();
     }
 
     @Override
-    public Request performDigitFactorial() {
-        return digitFactorial;
-    }
+    public long[][] performDigitFactorial() {
+        long[][] results = new long[2][this.numberStrings.length];
+        for (int i = 0; i < numberStrings.length; i++) {
+            results[0][i] = Long.parseLong(numberStrings[i]);
+            results[1][i] = digitFactorialSum(numberStrings[i]); 
+        }
 
-    @Override
-    public Response returnDigitFactorial(String outputURL) {
-        return digitFactorial;
+        return results;
     }
 
   }
@@ -45,21 +60,3 @@ public class DigitFactorialCalculator implements ComputerEngine {
         }
         return sum;
     }
-
-    // Read and process the file. Example F:\\CSVDemo.csv
-    public static void processFile(String filePath) {
-      Scanner sc = new Scanner(new File(filePath));
-      String line = sc.nextLine();
-      sc.close();
-
-        String[] numberStrings = line.split(",");
-        long[][] results = new long[2][numberStrings.length];
-
-        for (int i = 0; i < numberStrings.length; i++) {
-            results[0][i] = Long.parseLong(numberStrings[i]);
-            results[1][i] = digitFactorialSum(numberStrings[i]); 
-        }
-
-        return results;
-
-}
