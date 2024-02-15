@@ -12,8 +12,8 @@ public class ComputeEngineIntegrationTest {
         List<Integer> inputData = List.of(1, 10, 25);
         
         String testDataIdentifier = "testData";
-        computeEngine.returnDigitFactorial();
-        Response x = computeEngine.returnDigitFactorial();
+        computeEngine.performDigitFactorial();
+        Response x = computeEngine.performDigitFactorial();
 
         DataResponse computationResult = dataSystem.storeData(testDataIdentifier, x);
         computationResult = dataSystem.retrieveData(testDataIdentifier);
