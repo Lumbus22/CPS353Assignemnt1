@@ -2,7 +2,7 @@ public interface ComputerEngine {
     Data receiveDataForComputation();
 
     // Manipulate Data
-    Request performDigitFactorial(String filePath);
+    Request performDigitFactorial(Array array);
 }
 
 public class ComputerEngineImpl implements ComputerEngine {
@@ -15,7 +15,7 @@ public class ComputerEngineImpl implements ComputerEngine {
     }
 
     @Override
-    public Request performDigitFactorial(String filePath) {
+    public Request performDigitFactorial(Array array) {
         return new Request();
     }
 
