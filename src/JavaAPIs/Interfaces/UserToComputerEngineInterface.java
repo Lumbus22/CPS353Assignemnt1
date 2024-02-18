@@ -1,5 +1,3 @@
-import interfaces;
-
 public interface UserToComputerEngineInterface{
 // Allows user to set source and destination for where input integers are read from and where output is saved to
   Response setSourceAndDest(SourceInterface sourceInterface);
