@@ -1,7 +1,6 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import Interfaces.*;
 import org.junit.Test;
 
 public interface DataSystemInterface{
