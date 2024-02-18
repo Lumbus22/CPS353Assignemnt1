@@ -17,8 +17,7 @@ public class DigitFactorialCalculator implements ComputerEngine {
         DigitFactorialCalculator calculator = new DigitFactorialCalculator(filePath);
         calculator.receiveDataForComputation();
         long[][] results = calculator.performDigitFactorial();
-    }
-        catch (FileNotFoundException e) {
+    } catch (FileNotFoundException e) {
         System.err.println("The given file was not found: " + e.getMessage());
      }
     }
