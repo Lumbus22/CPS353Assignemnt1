@@ -1,5 +1,3 @@
-package interfaces;
-
 public interface DataSystemInterface {
     // Store data
     String[] storeData(String identifier, String data);
