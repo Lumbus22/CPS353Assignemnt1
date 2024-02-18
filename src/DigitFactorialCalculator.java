@@ -40,17 +40,16 @@ public class DigitFactorialCalculator implements ComputerEngine {
             try {
             results[0][i] = Long.parseLong(numberStrings[i]);
             results[1][i] = digitFactorialSum(numberStrings[i]);
-        } catch (NumberFormatException e) {
+        } 
+            catch (NumberFormatException e) {
             System.err.println("Invalid number format for: " + numberStrings[i] + e.getMessage());
             results[0][i] = 0;
             results[1][i] = -1;
         }
         }
-
         return results;
     }
 
-  }
 
     // Calculate the factorial for each int string
     private static long factorial(int n) {
@@ -70,3 +69,5 @@ public class DigitFactorialCalculator implements ComputerEngine {
         }
         return sum;
     }
+
+}
