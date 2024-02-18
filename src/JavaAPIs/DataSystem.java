@@ -14,14 +14,14 @@ public interface DataSystemInterface {
 
 public class DataSystem implements DataSystemInterface {
 
-  @Overide
+  @Override
   public Response storeData(String identifier, Data data) {
         //Send to data storage system
         return dataLocationMaybe;
 
     }
-
-    public DataResponse retrieveData(String identifier){
+  @Override
+  public DataResponse retrieveData(String identifier){
         // Retrieve data
         return RetrievedData;
     }
