@@ -1,11 +1,4 @@
-public interface ComputerEngine {
-    Data receiveDataForComputation();
-
-    // Manipulate Data
-    Request performDigitFactorial(Array array);
-}
-
-public class ComputerEngineImpl implements ComputerEngine {
+public class ComputerEngineImpl implements ComputerEngineInterface {
 
     private DataSystemInterface dataStore;
 
