@@ -1,42 +1,55 @@
-public interface DataSystemInterface {
-    // Store data
-  Response storeData(String identifier, Data data);
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
-    // Retrieve data
-  DataResponse retrieveData(String identifier);
+import Interfaces.*;
 
-    // Update existing data
-  Response updateData(String identifier, Data newData);
+import org.junit.Test;
 
-    // Delete data
-  Response deleteData(String identifier);
-}
 
 public class DataSystem implements DataSystemInterface {
 
+  @Test
   @Override
-  public Response storeData(String identifier, Data data) {
+  public String[] storeData(String identifier, String data) {
+      String[] returnString = new String[4];
+      data = "Hello";
+     
+     //Saves data to output.txt
+      try{
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter("dataStorage\\output.txt"));
+
+        writer.write(data + "\nNew Line");
+        writer.close();
+
+        System.out.println(data + ", Was wirtten to file output.txt");
+
+      }catch(IOException e){
+        e.printStackTrace();
+      }
         //Send to data storage system
-        return dataLocationMaybe;
+        return returnString;
 
     }
-  @Override
-  public DataResponse retrieveData(String identifier){
+
+    @Override
+    public String retrieveData(String identifier){
         // Retrieve data
-        return RetrievedData;
+        return identifier;//RetrievedData;
     }
     
   @Override
-  public Response updateData(String identifier, Data newData) {
+  public String updateData(String identifier, String[] newData) {
         //Updates the current data
-        return dataLocation;
+        return identifier;
     }
 
     // Delete data
   @Override
-  public Response deleteData(String identifier) {
+  public String deleteData(String identifier) {
         //Returns the deleted data
-        return deletedData;
+        return identifier;
     }
 }
 
