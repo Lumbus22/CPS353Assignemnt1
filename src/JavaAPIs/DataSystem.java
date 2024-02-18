@@ -1,11 +1,7 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-
-import Interfaces.*;
-
 import org.junit.Test;
-
 
 public class DataSystem implements DataSystemInterface {
 
@@ -32,7 +28,7 @@ public class DataSystem implements DataSystemInterface {
         return returnString;
 
     }
-    
+
     @Override
     public String retrieveData(String identifier){
         // Retrieve data
