@@ -10,6 +10,8 @@ import java.io.BufferedWriter;
 
 public class DataSystem implements DataSystemInterface {
 
+    //this is to test the file creation and output
+
     public static void main(String[] args) {
         long[][] array = new long[2][2];
         DataSystem dataSystem = new DataSystem();
@@ -31,7 +33,7 @@ public class DataSystem implements DataSystemInterface {
   
       // Saves data to output.txt
       try {
-          BufferedWriter writer = new BufferedWriter(new FileWriter("dataStorage\\output.txt"));
+          BufferedWriter writer = new BufferedWriter(new FileWriter("dataStorage\\" + identifier + ".txt"));
           writer.write(identifier + "\n");
           for (int i = 0; i < data.length; i++) {
               for (int j = 0; j < data[i].length; j++) {
