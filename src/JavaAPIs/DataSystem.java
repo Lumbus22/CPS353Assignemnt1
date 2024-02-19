@@ -2,10 +2,12 @@
 
 import java.io.FileWriter;
 import java.io.IOException;
+
 import java.io.BufferedWriter;
 
 //import org.junit.Test;
 //import org.junit.*;
+
 
 
 public class DataSystem implements DataSystemInterface {
@@ -48,11 +50,7 @@ public class DataSystem implements DataSystemInterface {
       } catch(IOException e) { 
           e.printStackTrace();
       }
-  
-      // Send to data storage system
-      return returnString;
-  }
-    
+      
     @Override
     public String readFromFile(String identifier){
         // Retrieve data

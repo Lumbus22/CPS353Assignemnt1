@@ -1,4 +1,3 @@
-
 public interface DataSystemInterface {
     // Store data
     String[] writeToFile(String identifier, long[][] data);
