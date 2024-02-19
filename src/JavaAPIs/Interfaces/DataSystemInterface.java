@@ -1,11 +1,10 @@
-package Interfaces;
 
 public interface DataSystemInterface {
     // Store data
-    String[] storeData(String identifier, String data);
+    String[] writeToFile(String identifier, long[][] data);
 
     // Retrieve data
-    String retrieveData(String identifier);
+    String readFromFile(String identifier);
 
     // Update existing data
     String updateData(String identifier, String[] newData);
