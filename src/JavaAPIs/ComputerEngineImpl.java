@@ -1,15 +1,15 @@
+import java.io.FileNotFoundException;
+
 public class ComputerEngineImpl implements ComputerEngineInterface {
 
-    private DataSystemInterface dataStore;
-
     @Override
-    public Data receiveDataForComputation() {
-        return null;
+    public void receiveDataForComputation() throws FileNotFoundException {
+        
     }
 
     @Override
-    public Request performDigitFactorial(Array array) {
-        return new Request();
+     public long[][] performDigitFactorial() {
+        return new long[2][];
     }
 
 }
