@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import java.io.BufferedWriter;
-
+import Interfaces.*;
 //import org.junit.Test;
 //import org.junit.*;
 
@@ -47,9 +47,10 @@ public class DataSystem implements DataSystemInterface {
           writer.close();
   
           System.out.println(data + ", Was written to file output.txt");
-      } catch(IOException e) { 
-          e.printStackTrace();
-      }
+          } catch(IOException e) { 
+              e.printStackTrace();
+          }
+    } // Add closing curly brace here
       
     @Override
     public String readFromFile(String identifier){
