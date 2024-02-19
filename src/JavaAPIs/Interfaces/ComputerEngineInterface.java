@@ -1,7 +1,9 @@
-public interface ComputerEngineInterface {
-  // Receieve Data
-    Data receiveDataForComputation();
+import java.io.FileNotFoundException;
 
-  // Manipulate Data
-    Request performDigitFactorial(Array array);
-}
+public interface ComputerEngineInterface {
+    // Receieve Data
+      public void receiveDataForComputation() throws FileNotFoundException;
+  
+    // Manipulate Data
+    public long[][] performDigitFactorial();
+  }
