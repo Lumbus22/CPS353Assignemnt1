@@ -10,12 +10,13 @@ public class UserToComputerEngineImpl implements UserToComputerEngineInterface {
   private String destinationFilePath;
   private static Scanner scanner = new Scanner(System.in);
 
+  // Test Script
   public static void main(String[] args) {
     UserToComputerEngineImpl engine = new UserToComputerEngineImpl();
 
-    engine.setSource("/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document.csv");
+    engine.setSource("inputFilepath.csv");
 
-    engine.setDestination("/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document2.csv");
+    engine.setDestination("outputFilepath.csv");
 
     try {
       long[][] outputDefault = engine.exCompDefaultDelim();
