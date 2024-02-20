@@ -1,6 +1,6 @@
 import java.io.FileNotFoundException;
 
-public class ComputerEngineImpl implements ComputerEngineInterface {
+public class ComputerEngineEmpty implements ComputerEngineInterface {
 
     @Override
     public void receiveDataForComputation() throws FileNotFoundException {
