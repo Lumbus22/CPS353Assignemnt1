@@ -23,8 +23,7 @@ public class UserToComputerEngineImpl implements UserToComputerEngineInterface {
       long[][] outputCustom = engine.exCompCustomDelim(":");
       } catch (FileNotFoundException e) {
       System.err.println("The specified file was not found: " + e.getMessage());
-    }
-    catch (IOException e) {
+    } catch (IOException e) {
       System.err.println("No input" + e.getMessage());
     }
     scanner.close();
