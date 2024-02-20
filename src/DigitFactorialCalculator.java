@@ -13,7 +13,7 @@ public class DigitFactorialCalculator extends ComputerEngineImpl {
 
     // Test Script
     public static void main(String[] args) throws FileNotFoundException {
-        String sourceFilePath = "/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document2.csv";
+        String sourceFilePath = "inputFilepath.csv";
         DigitFactorialCalculator calculator = new DigitFactorialCalculator(sourceFilePath);
         calculator.receiveDataForComputation();
         long[][] results = calculator.performDigitFactorial();
