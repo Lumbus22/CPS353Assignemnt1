@@ -12,5 +12,5 @@ public interface UserToComputerEngineInterface{
       public long[][] exCompDefaultDelim() throws FileNotFoundException, IOException;
 
     // Carries out the computation of the digit factorial, output formatted with custom delimiter
-      public long[][] exCompCustomDelim(String customDelim) throws FileNotFoundException;
+      public long[][] exCompCustomDelim(String customDelim) throws IOException;
     }
