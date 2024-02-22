@@ -1,5 +1,3 @@
-package ComputerEngine;
-
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
