@@ -12,7 +12,7 @@ public class DigitFactorialCalculator extends ComputerEngineImpl {
     }
 
     public static void main(String[] args) throws IOException {
-        String sourceFilePath = "/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document2.csv";
+        String sourceFilePath = "/Users/davidvenuto/Desktop/ComputerEngine/document2.csv";
         DigitFactorialCalculator calculator = new DigitFactorialCalculator(sourceFilePath);
         calculator.receiveDataForComputation();
         long[][] results = calculator.performDigitFactorial();
