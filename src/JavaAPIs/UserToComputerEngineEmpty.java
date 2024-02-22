@@ -1,6 +1,6 @@
 public class UserToComputerEngineEmpty implements UserToComputerEngineInterface {
 
-  private ComputerEngineEmpty computerEngine;
+  private ComputerEngineImpl computerEngine;
 
   @Override
   public Response setSourceAndDest(String sourceURL, String destinationURL) {
