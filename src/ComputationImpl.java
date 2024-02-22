@@ -1,19 +1,17 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 
-public class DigitFactorialCalculator extends ComputerEngineImpl {
+public class ComputationImpl extends ComputerEngineImpl {
 
-    private String sourceFilePath;
     private String[] numberStrings;
+    private DataSystem dataSystem;
 
-    public DigitFactorialCalculator(String sourceFilePath) {
-        this.sourceFilePath = sourceFilePath;
+    public ComputationImpl(String sourceFilePath) {
+        this.dataSystem = new DataSystem(sourceFilePath);
     }
 
     public static void main(String[] args) throws IOException {
-        String sourceFilePath = "/Users/davidvenuto/Desktop/ComputerEngine/document2.csv";
-        DigitFactorialCalculator calculator = new DigitFactorialCalculator(sourceFilePath);
+        String sourceFilePath = "/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document.csv";
+        ComputationImpl calculator = new ComputationImpl(sourceFilePath);
         calculator.receiveDataForComputation();
         long[][] results = calculator.performDigitFactorial();
         calculator.printResults(results);
@@ -21,13 +19,8 @@ public class DigitFactorialCalculator extends ComputerEngineImpl {
 
     @Override
     public void receiveDataForComputation() throws IOException {
-        System.out.println(System.getProperty("user.dir"));
-        try (BufferedReader reader = new BufferedReader(new FileReader(this.sourceFilePath))) {
-            String line = reader.readLine();
-            if (line != null) {
-                this.numberStrings = line.split(",");
-            }
-        }
+            dataSystem.readFromFile(); // Ensure data is read before access
+            this.numberStrings = dataSystem.getNumberStrings();
     }
 
     @Override
@@ -39,6 +32,7 @@ public class DigitFactorialCalculator extends ComputerEngineImpl {
         }
         for (int i = 0; i < numberStrings.length; i++) {
             try {
+                System.out.println("Parsing number: '" + numberStrings[i] + "'");
                 results[0][i] = Long.parseLong(numberStrings[i]);
                 results[1][i] = digitFactorialSum(numberStrings[i]);
             } catch (NumberFormatException e) {
