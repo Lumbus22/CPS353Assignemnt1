@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class ComputerEngineImpl implements ComputerEngineInterface {
+public class ComputerEngineImp implements ComputerEngineInterface {
 
     @Override
     public void receiveDataForComputation() throws IOException {
