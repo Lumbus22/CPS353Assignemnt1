@@ -6,6 +6,7 @@ import java.io.FileReader;
 
 public class DataSystem implements DataSystemInterface {
 
+
     public String outPutFilePath;
     public String inputFilePath;
     private String destinationFilePath;
@@ -18,7 +19,9 @@ public class DataSystem implements DataSystemInterface {
 
     @Override
     public void readFromFile() throws IOException {
+
         try (BufferedReader reader = new BufferedReader(new FileReader(this.inputFilePath))) {
+
             String line = reader.readLine();
             if (line != null) {
                 this.numberStrings = line.split(",");
@@ -34,6 +37,7 @@ public class DataSystem implements DataSystemInterface {
         if (delimiter == null || delimiter.isEmpty()) {
             delimiter = ","; // Default delimiter
         }
+
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(this.outPutFilePath))) {
             for (long[] row : results) {
                 StringBuilder sb = new StringBuilder();
@@ -50,6 +54,7 @@ public class DataSystem implements DataSystemInterface {
     }
 
     //currently is not usable as the inuput and output destinations are set by the constructor
+
 
     public void setDestination(String destinationFilePath) {
         this.destinationFilePath = destinationFilePath;
