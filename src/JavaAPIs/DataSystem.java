@@ -1,36 +1,58 @@
-import java.io.BufferedWriter;
+
+
 import java.io.FileWriter;
 import java.io.IOException;
-import org.junit.Test;
+
+import java.io.BufferedWriter;
+//import org.junit.Test;
+//import org.junit.*;
+
+
 
 public class DataSystem implements DataSystemInterface {
 
-  @Test
-  @Override
-  public String[] storeData(String identifier, String data) {
-      String[] returnString = new String[4];
-      data = "Hello";
-     
-     //Saves data to output.txt
-      try{
+    //this is to test the file creation and output
 
-        BufferedWriter writer = new BufferedWriter(new FileWriter("dataStorage\\output.txt"));
-
-        writer.write(data + "\nNew Line");
-        writer.close();
-
-        System.out.println(data + ", Was wirtten to file output.txt");
-
-      }catch(IOException e){
-        e.printStackTrace();
-      }
-        //Send to data storage system
-        return returnString;
-
+    public static void main(String[] args) {
+        long[][] array = new long[2][2];
+        DataSystem dataSystem = new DataSystem();
+        String[] data = dataSystem.writeToFile("testIdentifier", array);
+        System.out.println(data);
+        String readData = dataSystem.readFromFile("test");
+        System.out.println(readData);
+        String updatedData = dataSystem.updateData("test", new String[]{"This is an updated test"});
+        System.out.println(updatedData);
+        String deletedData = dataSystem.deleteData("test");
+        System.out.println(deletedData);
     }
+    
+  
+  @Override
+  public String[] writeToFile(String identifier, long[][] data) {
 
+      String[] returnString = new String[4];
+  
+      // Saves data to output.txt
+      try {
+          BufferedWriter writer = new BufferedWriter(new FileWriter("dataStorage\\" + identifier + ".txt"));
+          writer.write(identifier + "\n");
+          for (int i = 0; i < data.length; i++) {
+              for (int j = 0; j < data[i].length; j++) {
+                  writer.write(data[i][j] + ", ");
+              }
+              writer.write("\n");
+          }
+          
+          writer.close();
+  
+          System.out.println(data + ", Was written to file output.txt");
+          } catch(IOException e) { 
+              e.printStackTrace();
+          }
+    } // Add closing curly brace here
+      
     @Override
-    public String retrieveData(String identifier){
+    public String readFromFile(String identifier){
         // Retrieve data
         return identifier;//RetrievedData;
     }
