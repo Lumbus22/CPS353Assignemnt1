@@ -1,9 +1,9 @@
-import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class ComputerEngineImpl implements ComputerEngineInterface {
 
     @Override
-    public void receiveDataForComputation() throws FileNotFoundException {
+    public void receiveDataForComputation() throws IOException {
         
     }
 

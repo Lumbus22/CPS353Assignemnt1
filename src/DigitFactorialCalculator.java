@@ -1,32 +1,33 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class DigitFactorialCalculator extends ComputerEngineImpl {
 
-    private String filePath;
+    private String sourceFilePath;
     private String[] numberStrings;
 
-    public DigitFactorialCalculator(String filePath) {
-        this.filePath = filePath;
+    public DigitFactorialCalculator(String sourceFilePath) {
+        this.sourceFilePath = sourceFilePath;
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
-        String filePath = "document.csv";
-        DigitFactorialCalculator calculator = new DigitFactorialCalculator(filePath);
+    public static void main(String[] args) throws IOException {
+        String sourceFilePath = "/Users/davidvenuto/Desktop/ComputerEngine/document2.csv";
+        DigitFactorialCalculator calculator = new DigitFactorialCalculator(sourceFilePath);
         calculator.receiveDataForComputation();
         long[][] results = calculator.performDigitFactorial();
         calculator.printResults(results);
     }
 
     @Override
-    public void receiveDataForComputation() throws FileNotFoundException {
-        Scanner sc = new Scanner(new File(this.filePath));
-        if (sc.hasNextLine()) {
-            String line = sc.nextLine();
-            this.numberStrings = line.split(",");
+    public void receiveDataForComputation() throws IOException {
+        System.out.println(System.getProperty("user.dir"));
+        try (BufferedReader reader = new BufferedReader(new FileReader(this.sourceFilePath))) {
+            String line = reader.readLine();
+            if (line != null) {
+                this.numberStrings = line.split(",");
+            }
         }
-        sc.close();
     }
 
     @Override
@@ -38,8 +39,6 @@ public class DigitFactorialCalculator extends ComputerEngineImpl {
         }
         for (int i = 0; i < numberStrings.length; i++) {
             try {
-                System.out.println("Parsing number: '" + numberStrings[i] + "'");
-                results[0][i] = Long.parseLong(numberStrings[i]);
                 results[0][i] = Long.parseLong(numberStrings[i]);
                 results[1][i] = digitFactorialSum(numberStrings[i]);
             } catch (NumberFormatException e) {
@@ -70,6 +69,7 @@ public class DigitFactorialCalculator extends ComputerEngineImpl {
         return sum;
     }
 
+    // Will remove at some point, just here for testing purposes
     public void printResults(long[][] results) {
         System.out.println("Original Number | Sum of Digit Factorials");
         System.out.println("-----------------------------------------");

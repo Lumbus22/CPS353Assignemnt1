@@ -1,6 +1,6 @@
 ### Things to do for Assignment 4
-- [ ] Implement computation component of computer engine
-- [ ] Implement coordination component of computer engine
+- [x] Implement computation component of computer engine
+- [x] Implement coordination component of computer engine
 - [ ] Implement data storage
 - [ ] Verify that tests are passing
 - [ ] Add at least one additional test
