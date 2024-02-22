@@ -11,9 +11,9 @@ public class UserToComputerEngineImpl implements UserToComputerEngineInterface {
   public static void main(String[] args) {
     UserToComputerEngineImpl engine = new UserToComputerEngineImpl();
 
-    engine.setSource("/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document.csv");
+    engine.setSource("/Users/davidvenuto/Desktop/ComputerEngine/document.csv");
 
-    engine.setDestination("/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document2.csv");
+    engine.setDestination("/Users/davidvenuto/Desktop/ComputerEngine/document2.csv");
 
     try {
       engine.exCompCustomDelim(":");
