@@ -1,7 +1,10 @@
+package ComputerEngine;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 
 public class DataSystem implements DataSystemInterface {
@@ -17,11 +20,11 @@ public class DataSystem implements DataSystemInterface {
         this.outPutFilePath = outPutFilePath;
     }
 
+    File file = new File("/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document.csv");
+
     @Override
     public void readFromFile() throws IOException {
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(this.inputFilePath))) {
-
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line = reader.readLine();
             if (line != null) {
                 this.numberStrings = line.split(",");
@@ -63,7 +66,6 @@ public class DataSystem implements DataSystemInterface {
 
     // updateData and deleteData still need to be implemented
 
-
     @Override
     public String updateData(String identifier, String[] newData) {
         // Updates the current data
@@ -77,3 +79,4 @@ public class DataSystem implements DataSystemInterface {
         return identifier;
     }
 }
+

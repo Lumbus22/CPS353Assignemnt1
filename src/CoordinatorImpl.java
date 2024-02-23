@@ -1,12 +1,20 @@
+package ComputerEngine;
+
 import java.io.IOException;
 
 public class CoordinatorImpl implements CoordinatorInterface {
 
   private String sourceFilePath;
-  private DataSystem dataSystem;
+  protected DataSystem dataSystem;
 
-  public CoordinatorImpl() {
+    // Constructor that takes sourceFilePath and initializes DataSystem
+    public CoordinatorImpl() {
 
+  }
+
+  // Additional constructor for testing, allowing dependency injection
+  public CoordinatorImpl(DataSystem dataSystem) {
+      this.dataSystem = dataSystem;
   }
 
   // add functionality to let user create their own output file at some point
@@ -27,7 +35,6 @@ public class CoordinatorImpl implements CoordinatorInterface {
   @Override
   public boolean startComputation(String destinationFilePath) {
     try {
-      this.dataSystem = new DataSystem(sourceFilePath);
       this.dataSystem.readFromFile();
       ComputationImpl computation = new ComputationImpl(sourceFilePath);
       computation.receiveDataForComputation();
