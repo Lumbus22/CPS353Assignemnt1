@@ -1,4 +1,4 @@
-//package ComputerEngine;
+ackage ComputerEngine;
 
 import java.io.IOException;
 
@@ -21,9 +21,9 @@ public class CoordinatorImpl implements CoordinatorInterface {
 
   public static void main(String[] args) {
     CoordinatorImpl coordinator = new CoordinatorImpl();
-    String sourceFilePath = "src/test/dataTests/inputtests.csv";
+    String sourceFilePath = "/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document.csv";
     coordinator.setSource(sourceFilePath);
-    String destinationFilePath = "src/test/dataTests/testoutput.csv";
+    String destinationFilePath = "/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document2.csv";
     boolean isSuccess = coordinator.startComputationCustDelimiter(destinationFilePath, "/");
     if (isSuccess) {
       System.out.println("Computation completed successfully and results are written to " + destinationFilePath);
@@ -35,10 +35,7 @@ public class CoordinatorImpl implements CoordinatorInterface {
   @Override
   public boolean startComputation(String destinationFilePath) {
     try {
-      System.out.println("Data read from file");
-      this.dataSystem = new DataSystem(sourceFilePath, destinationFilePath);
       this.dataSystem.readFromFile();
-      
       ComputationImpl computation = new ComputationImpl(sourceFilePath);
       computation.receiveDataForComputation();
       long[][] results = computation.performDigitFactorial();
@@ -54,7 +51,7 @@ public class CoordinatorImpl implements CoordinatorInterface {
   @Override
   public boolean startComputationCustDelimiter(String destinationFilePath, String delimiter) {
     try {
-      this.dataSystem = new DataSystem(sourceFilePath, destinationFilePath);
+      this.dataSystem = new DataSystem(sourceFilePath);
       this.dataSystem.readFromFile();
       ComputationImpl computation = new ComputationImpl(sourceFilePath);
       computation.receiveDataForComputation();
