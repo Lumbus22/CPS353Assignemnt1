@@ -6,17 +6,22 @@ import java.io.FileReader;
 
 public class DataSystem implements DataSystemInterface {
 
-    private String sourceFilePath;
+
+    public String outPutFilePath;
+    public String inputFilePath;
     private String destinationFilePath;
     private String[] numberStrings;
 
-    public DataSystem(String sourceFilePath) {
-        this.sourceFilePath = sourceFilePath;
+    public DataSystem(String inputFilePath, String outPutFilePath) {
+        this.inputFilePath = inputFilePath;
+        this.outPutFilePath = outPutFilePath;
     }
 
     @Override
     public void readFromFile() throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(this.sourceFilePath))) {
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(this.inputFilePath))) {
+
             String line = reader.readLine();
             if (line != null) {
                 this.numberStrings = line.split(",");
@@ -32,7 +37,8 @@ public class DataSystem implements DataSystemInterface {
         if (delimiter == null || delimiter.isEmpty()) {
             delimiter = ","; // Default delimiter
         }
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(this.destinationFilePath))) {
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(this.outPutFilePath))) {
             for (long[] row : results) {
                 StringBuilder sb = new StringBuilder();
                 for (int i = 0; i < row.length; i++) {
@@ -45,7 +51,11 @@ public class DataSystem implements DataSystemInterface {
                 writer.newLine();
             }
         }
+        
     }
+
+    //currently is not usable as the inuput and output destinations are set by the constructor
+
 
     public void setDestination(String destinationFilePath) {
         this.destinationFilePath = destinationFilePath;
