@@ -1,4 +1,4 @@
-package ComputerEngine;
+//package ComputerEngine;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,7 +20,7 @@ public class DataSystem implements DataSystemInterface {
         this.outPutFilePath = outPutFilePath;
     }
 
-    File file = new File("/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document.csv");
+    File file = new File("src/test/dataTests/tests.csv");
 
     @Override
     public void readFromFile() throws IOException {

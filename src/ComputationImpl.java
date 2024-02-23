@@ -6,11 +6,11 @@ public class ComputationImpl extends ComputerEngineImpl {
     private DataSystem dataSystem;
 
     public ComputationImpl(String sourceFilePath) {
-        this.dataSystem = new DataSystem(sourceFilePath);
+        this.dataSystem = new DataSystem("/src/test/inputTests/inputtests.csv", "/src/test/outpputTests/outputtests.csv");
     }
 
     public static void main(String[] args) throws IOException {
-        String sourceFilePath = "/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document.csv";
+        String sourceFilePath = "/src/test/inputTests/inputtests.csv";
         ComputationImpl calculator = new ComputationImpl(sourceFilePath);
         calculator.receiveDataForComputation();
         long[][] results = calculator.performDigitFactorial();
