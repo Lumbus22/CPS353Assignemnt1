@@ -51,6 +51,7 @@ public class DataSystem implements DataSystemInterface {
                 writer.newLine();
             }
         }
+        
     }
 
     //currently is not usable as the inuput and output destinations are set by the constructor
