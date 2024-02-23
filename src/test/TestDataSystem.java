@@ -9,9 +9,11 @@ public class TestDataSystem {
     }
     @Test
     public void testDataSystemConstructor(){
-        DataSystem dataSystem = new DataSystem("\\src\\test\\inputTests\\inputtests.csv", "\\src\\test\\outpputTests\\outputtests.csv");
-        assertEquals("\\src\\test\\inputTests\\inputtests.csv", dataSystem.inputFilePath);
-        assertEquals("\\src\\test\\outpputTests\\outputtests.csv", dataSystem.outPutFilePath);
+
+        DataSystem dataSystem = new DataSystem("/src/test/inputTests/inputtests.csv", "/src/test/outpputTests/outputtests.csv");
+        assertEquals("/src/test/inputTests/inputtests.csv", dataSystem.inputFilePath);
+        assertEquals("/src/test/outpputTests/outputtests.csv", dataSystem.outPutFilePath);
+
     }
     /* Furture testing class to  work on
     @Test
