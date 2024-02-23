@@ -24,7 +24,9 @@ public class DataSystem implements DataSystemInterface {
 
     @Override
     public void readFromFile() throws IOException {
+
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+
             String line = reader.readLine();
             if (line != null) {
                 this.numberStrings = line.split(",");
