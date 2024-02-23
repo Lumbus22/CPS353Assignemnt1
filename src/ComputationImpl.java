@@ -9,6 +9,10 @@ public class ComputationImpl extends ComputerEngineImpl {
         this.dataSystem = new DataSystem("/src/test/inputTests/inputtests.csv", "/src/test/outpputTests/outputtests.csv");
     }
 
+    public void setDataSystem(DataSystem dataSystem) {
+        this.dataSystem = dataSystem;
+    }
+    
     public static void main(String[] args) throws IOException {
         String sourceFilePath = "/src/test/inputTests/inputtests.csv";
         ComputationImpl calculator = new ComputationImpl(sourceFilePath);
