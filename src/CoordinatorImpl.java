@@ -1,5 +1,3 @@
-ackage ComputerEngine;
-
 import java.io.IOException;
 
 public class CoordinatorImpl implements CoordinatorInterface {
