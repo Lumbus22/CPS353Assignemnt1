@@ -1,5 +1,3 @@
-package ComputerEngine;
-
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
