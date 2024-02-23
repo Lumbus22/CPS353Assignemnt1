@@ -2,7 +2,7 @@ import java.io.IOException;
 
 public class ComputationImpl extends ComputerEngineImpl {
 
-    private String[] numberStrings;
+    protected String[] numberStrings;
     private DataSystem dataSystem;
 
     public ComputationImpl(String sourceFilePath) {
@@ -21,6 +21,10 @@ public class ComputationImpl extends ComputerEngineImpl {
         calculator.printResults(results);
     }
 
+    public String[] getNumberStrings() {
+        return numberStrings;
+    }
+    
     @Override
     public void receiveDataForComputation() throws IOException {
             dataSystem.readFromFile(); // Ensure data is read before access
