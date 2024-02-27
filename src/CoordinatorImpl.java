@@ -49,7 +49,7 @@ public class CoordinatorImpl implements CoordinatorInterface {
   @Override
   public boolean startComputationCustDelimiter(String destinationFilePath, String delimiter) {
     try {
-      this.dataSystem = new DataSystem(sourceFilePath);
+      this.dataSystem = new DataSystem(sourceFilePath, destinationFilePath);
       this.dataSystem.readFromFile();
       ComputationImpl computation = new ComputationImpl(sourceFilePath);
       computation.receiveDataForComputation();
