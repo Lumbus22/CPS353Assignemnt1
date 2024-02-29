@@ -2,13 +2,17 @@ import java.io.IOException;
 
 public class ComputationImpl extends ComputerEngineImpl {
 
-    private String[] numberStrings;
+    protected String[] numberStrings;
     private DataSystem dataSystem;
 
     public ComputationImpl(String sourceFilePath) {
         this.dataSystem = new DataSystem("/src/test/inputTests/inputtests.csv", "/src/test/outpputTests/outputtests.csv");
     }
 
+    public void setDataSystem(DataSystem dataSystem) {
+        this.dataSystem = dataSystem;
+    }
+    
     public static void main(String[] args) throws IOException {
         String sourceFilePath = "/src/test/inputTests/inputtests.csv";
         ComputationImpl calculator = new ComputationImpl(sourceFilePath);
@@ -17,6 +21,10 @@ public class ComputationImpl extends ComputerEngineImpl {
         calculator.printResults(results);
     }
 
+    public String[] getNumberStrings() {
+        return numberStrings;
+    }
+    
     @Override
     public void receiveDataForComputation() throws IOException {
             dataSystem.readFromFile(); // Ensure data is read before access

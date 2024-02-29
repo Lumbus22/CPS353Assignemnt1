@@ -9,6 +9,7 @@ import static org.mockito.Mockito.when;
 
 import java.io.IOException;
 
+
 public class TestComputation {
 
     
@@ -22,6 +23,10 @@ public class TestComputation {
         mockDataSystem = mock(DataSystem.class);
         computation = new ComputationImpl("dummy/path");
     }
+
+
+
+    // Make sure that datasystem getNumberStrings = receiveDataForComputation numberStrings
 
     @Test
     public void testReceiveDataForComputation() throws IOException {
