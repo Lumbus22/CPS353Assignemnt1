@@ -1,5 +1,5 @@
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertNotNull;
@@ -16,7 +16,7 @@ public class TestComputation {
     private ComputationImpl computation;
     private DataSystem mockDataSystem;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         computation = new ComputationImpl("dummyPath");
         computation.numberStrings = new String[]{"1", "2"};
