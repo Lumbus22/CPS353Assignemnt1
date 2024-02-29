@@ -5,20 +5,26 @@ import java.io.File;
 
 public class TestUser {
 	
-	// TODO 3: change the type of this variable to the name you're using for your
-	// User <-> ComputeEngine API; also update the parameter passed to the constructor
-	private final ComputationCoordinator coordinator;
+	private final CoordinatorImpl coordinator;
 
-	public TestUser(ComputationCoordinator coordinator) {
+	public TestUser(CoordinatorImpl coordinator) {
 		this.coordinator = coordinator;
 	}
 
 	public void run(String outputPath) {
 		char delimiter = ';';
 		String inputPath = "test" + File.separatorChar + "testInputFile.test";
+		String outputPath = "test1" + File.separatorChar + "testOutputFile.test";
 		
-		// TODO 4: Call the appropriate method(s) on the coordinator to get it to 
-		// run the compute job specified by inputPath, outputPath, and delimiter
+		CoordinatorImpl coordinator = new CoordinatorImpl();
+		coordinator.setSource(inputPath);
+		boolean isSuccess = coordinator.startComputationCustDelimiter(outputPath, delimiter);
+		if (isSuccess) {
+      			System.out.println("Computation completed successfully and results are written to " + destinationFilePath);
+   		 } else {
+      			System.err.println("Computation failed.");
+   	 }
+		
 	}
 
 }
