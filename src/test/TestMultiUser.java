@@ -1,4 +1,4 @@
-package edu.softwareeng.sample;
+//package edu.softwareeng.sample;
 
 import java.io.File;
 import java.io.IOException;
