@@ -1,5 +1,7 @@
 import java.io.IOException;
 
+import Interfaces.CoordinatorInterface;
+
 public class CoordinatorImpl implements CoordinatorInterface {
 
   private String sourceFilePath;
