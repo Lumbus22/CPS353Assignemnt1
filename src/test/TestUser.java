@@ -12,6 +12,7 @@ public class TestUser {
 	}
 
 	public void run(String outputPath) {
+
 		String delimiter = ";";
 		String inputPath = "test" + File.separatorChar + "testInputFile.test";
 		//String outputPath = "test1" + File.separatorChar + "testOutputFile.test";
