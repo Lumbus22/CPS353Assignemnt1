@@ -19,7 +19,7 @@ public class TestMultiUser {
 	
 	@BeforeEach
 	public void initializeComputeEngine() {
-		CoordinatorImpl coordinator = new CoordinatorImpl();
+		coordinator = new CoordinatorImpl();
 	}
 
 	@Test

@@ -17,7 +17,7 @@ public class TestCoordinator {
         CoordinatorImpl coordinator = new CoordinatorImpl(mockDataSystem);
         doNothing().when(mockDataSystem).readFromFile();
         doNothing().when(mockDataSystem).writeToFile(any(long[][].class), anyString());
-        boolean isSuccess = coordinator.startComputation("/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document.csv");
+        boolean isSuccess = coordinator.startComputation("/ComputerEngine/document.csv");
         verify(mockDataSystem).readFromFile();
         verify(mockDataSystem).writeToFile(any(long[][].class), isNull());
         assertTrue(isSuccess);

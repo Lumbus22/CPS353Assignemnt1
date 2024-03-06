@@ -1,7 +1,3 @@
-package JavaAPIs;
-
-import Interfaces.CoordinatorInterface;
-import Interfaces.DataSystemInterface;
 
 
 public class CoordinatorEmpty implements CoordinatorInterface {
