@@ -1,4 +1,4 @@
-package edu.softwareeng.sample;
+//package edu.softwareeng.sample;
 
 import java.io.File;
 
@@ -12,15 +12,16 @@ public class TestUser {
 	}
 
 	public void run(String outputPath) {
-		char delimiter = ';';
+
+		String delimiter = ";";
 		String inputPath = "test" + File.separatorChar + "testInputFile.test";
-		String outputPath = "test1" + File.separatorChar + "testOutputFile.test";
+		//String outputPath = "test1" + File.separatorChar + "testOutputFile.test";
 		
 		CoordinatorImpl coordinator = new CoordinatorImpl();
 		coordinator.setSource(inputPath);
 		boolean isSuccess = coordinator.startComputationCustDelimiter(outputPath, delimiter);
 		if (isSuccess) {
-      			System.out.println("Computation completed successfully and results are written to " + destinationFilePath);
+      			System.out.println("Computation completed successfully and results are written to " + outputPath);
    		 } else {
       			System.err.println("Computation failed.");
    	 }

@@ -1,5 +1,6 @@
 import java.io.IOException;
 
+
 public class CoordinatorImpl implements CoordinatorInterface {
 
   private String sourceFilePath;
@@ -19,9 +20,9 @@ public class CoordinatorImpl implements CoordinatorInterface {
 
   public static void main(String[] args) {
     CoordinatorImpl coordinator = new CoordinatorImpl();
-    String sourceFilePath = "/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document.csv";
+    String sourceFilePath = "ComputerEngine/document.csv";
     coordinator.setSource(sourceFilePath);
-    String destinationFilePath = "/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document2.csv";
+    String destinationFilePath = "ComputerEngine/document2.csv";
     boolean isSuccess = coordinator.startComputationCustDelimiter(destinationFilePath, "/");
     if (isSuccess) {
       System.out.println("Computation completed successfully and results are written to " + destinationFilePath);

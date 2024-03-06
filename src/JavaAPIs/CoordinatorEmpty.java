@@ -1,3 +1,5 @@
+
+
 public class CoordinatorEmpty implements CoordinatorInterface {
 
   private String sourceFilePath;
