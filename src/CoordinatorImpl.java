@@ -1,35 +1,23 @@
 import java.io.IOException;
-
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import Interfaces.CoordinatorInterface;
 
 public class CoordinatorImpl implements CoordinatorInterface {
 
   private String sourceFilePath;
   protected DataSystem dataSystem;
+  private ExecutorService executor;
 
-    // Constructor that takes sourceFilePath and initializes DataSystem
-    public CoordinatorImpl() {
-
+  public CoordinatorImpl() {
+    int numberOfThreads = 4;
+    executor = Executors.newFixedThreadPool(numberOfThreads);
   }
 
-  // Additional constructor for testing, allowing dependency injection
   public CoordinatorImpl(DataSystem dataSystem) {
+      this();
       this.dataSystem = dataSystem;
-  }
-
-  // add functionality to let user create their own output file at some point
-
-  public static void main(String[] args) {
-    CoordinatorImpl coordinator = new CoordinatorImpl();
-    String sourceFilePath = "/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document.csv";
-    coordinator.setSource(sourceFilePath);
-    String destinationFilePath = "/Users/davidvenuto/Desktop/TestCodeShit/ComputerEngine/document2.csv";
-    boolean isSuccess = coordinator.startComputationCustDelimiter(destinationFilePath, "/");
-    if (isSuccess) {
-      System.out.println("Computation completed successfully and results are written to " + destinationFilePath);
-    } else {
-      System.err.println("Computation failed.");
-    }
   }
 
   @Override
@@ -37,10 +25,21 @@ public class CoordinatorImpl implements CoordinatorInterface {
     try {
       this.dataSystem.readFromFile();
       ComputationImpl computation = new ComputationImpl(sourceFilePath);
-      computation.receiveDataForComputation();
-      long[][] results = computation.performDigitFactorial();
-      this.dataSystem.setDestination(destinationFilePath);
-      this.dataSystem.writeToFile(results, null);
+      
+      executor.submit(() -> {
+        try {
+          computation.receiveDataForComputation();
+          long[][] results = computation.performDigitFactorial();
+          this.dataSystem.setDestination(destinationFilePath);
+          this.dataSystem.writeToFile(results, null);
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      });
+
+      executor.shutdown();
+      executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+      
       return true;
     } catch (IOException e) {
       e.printStackTrace();
@@ -54,10 +53,21 @@ public class CoordinatorImpl implements CoordinatorInterface {
       this.dataSystem = new DataSystem(sourceFilePath, destinationFilePath);
       this.dataSystem.readFromFile();
       ComputationImpl computation = new ComputationImpl(sourceFilePath);
-      computation.receiveDataForComputation();
-      long[][] results = computation.performDigitFactorial();
-      this.dataSystem.setDestination(destinationFilePath);
-      this.dataSystem.writeToFile(results, delimiter);
+      
+      executor.submit(() -> {
+        try {
+          computation.receiveDataForComputation();
+          long[][] results = computation.performDigitFactorial();
+          this.dataSystem.setDestination(destinationFilePath);
+          this.dataSystem.writeToFile(results, delimiter);
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      });
+
+      executor.shutdown();
+      executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+
       return true;
     } catch (IOException e) {
       e.printStackTrace();
@@ -65,7 +75,6 @@ public class CoordinatorImpl implements CoordinatorInterface {
     }
   }
 
-  // Allows user to set inputFile source (in form of csv for now)
   @Override
   public String setSource(String inputFile) {
     this.sourceFilePath = inputFile;
@@ -73,3 +82,5 @@ public class CoordinatorImpl implements CoordinatorInterface {
   }
 
 }
+
+
