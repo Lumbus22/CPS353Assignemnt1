@@ -17,7 +17,6 @@ public class TestUser {
 		String inputPath = "test" + File.separatorChar + "testInputFile.test";
 		//String outputPath = "test1" + File.separatorChar + "testOutputFile.test";
 		
-		CoordinatorImpl coordinator = new CoordinatorImpl();
 		coordinator.setSource(inputPath);
 		boolean isSuccess = coordinator.startComputationCustDelimiter(outputPath, delimiter);
 		if (isSuccess) {
