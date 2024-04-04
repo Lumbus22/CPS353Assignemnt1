@@ -1,29 +1,29 @@
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 public class TestDataSystem {
 
     @Test
     public void testWriteToFile() throws IOException {
-        DataSystem dataSystem = new DataSystem();
-        String identifier = "testIdentifier";
-        String text = "Hello, World!";
+        DataSystem dataSystem = new DataSystem(null, null); // Assuming no-arg constructor
+        String delimiter = ",";
+        long[][] data = {{1, 2}, {3, 4}}; // Example data initialization
 
-        // Call the method in DataSystem that writes text to a file
-        dataSystem.writeToFile(identifier, text);
+        dataSystem.writeToFile(data, delimiter);
 
         // The file path where DataSystem writes the file
         String filePath = "dataStorage\\output.txt";
 
         // Check that the file now exists
-
-
         File file = new File(filePath);
-        System.out.println("Expected file path: " + file.getPath());
-        System.out.println("File exists: " + file.exists());
-        assertTrue(file.exists());
+        assertTrue(file.exists(), "File does not exist: " + file.getPath());
 
         // Check that the file contains the expected text
         String content = new String(Files.readAllBytes(Paths.get(filePath)));
-        assertTrue(content.contains(text + "\nNew Line"));
+        assertTrue(content.contains(delimiter), "File content does not match expected text.");
     }
 }
