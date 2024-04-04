@@ -1,5 +1,3 @@
-//package ComputerEngine;
-
 import java.io.FileWriter;
 import java.io.IOException;
 
