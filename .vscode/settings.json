@@ -8,5 +8,12 @@
             "lib/junit-4.13.2.jar"
         ]
     },
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.sourcePaths": [
+        "src",
+        "src/Interfaces",
+        "src/JavaAPIs",
+        "test"
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
