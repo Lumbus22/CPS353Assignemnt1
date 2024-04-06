@@ -1,12 +1,14 @@
-
+package JavaAPIs;
 
 import java.io.IOException;
+
+import Interfaces.ComputerEngineInterface;
 
 public class ComputerEngineImpl implements ComputerEngineInterface {
 
     @Override
-    public void receiveDataForComputation() throws IOException {
-        
+    public String[] receiveDataForComputation() throws IOException {
+        return null;
     }
 
     @Override

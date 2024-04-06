@@ -1,3 +1,4 @@
+package Interfaces;
 public interface CoordinatorInterface{
     
     // Allows user to set inputFile source (in form of csv for now) 
