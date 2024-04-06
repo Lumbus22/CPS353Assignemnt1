@@ -28,7 +28,7 @@ public class TestMultiUser {
 		int numThreads = 4;
 		List<TestUser> testUsers = new ArrayList<>();
 		for (int i = 0; i < numThreads; i++) {
-			testUsers.add(new TestUser(coordinator));
+			testUsers.add(new TestUser());
 		}
 		
 		// Run single threaded

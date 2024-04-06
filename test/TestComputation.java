@@ -32,7 +32,7 @@ public class TestComputation {
     @Test
     public void testPerformDigitFactorial() {
         String[] numberStrings = {"1", "2"};
-        long[][] expectedResults = {{1, 2}, {1, 2}}; // Assuming digitFactorialSum for '1' and '2' returns 1 and 2 respectively
+        long[][] expectedResults = {{1, 2}, {1, 2}};
 
         long[][] results = computation.performDigitFactorial(numberStrings);
 

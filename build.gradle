@@ -1,16 +1,16 @@
 apply plugin: 'java'
 
 sourceSets {
-	main {
-	  java {
-		srcDirs = ['src']
-	  }
-	}
-	test {
-	  java {
-	     srcDirs = ['test']
-	  }
-	 }
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['test']
+        }
+    }
 }
 
 repositories {
@@ -20,7 +20,7 @@ repositories {
 dependencies {
     testImplementation('junit:junit:4.12')
     testImplementation('org.junit.jupiter:junit-jupiter:5.8.2')
-	testImplementation('org.mockito:mockito-core:5.10.0')
+    testImplementation('org.mockito:mockito-core:5.10.0')
 }
 
 test {

@@ -10,9 +10,10 @@
     },
     "java.debug.settings.onBuildFailureProceed": true,
     "java.project.sourcePaths": [
-        "lib/test",
         "src",
+        "src/Interfaces",
         "src/JavaAPIs",
         "test"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

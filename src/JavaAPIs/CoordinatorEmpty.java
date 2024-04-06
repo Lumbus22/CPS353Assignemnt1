@@ -4,7 +4,7 @@ import Interfaces.CoordinatorInterface;
 
 public class CoordinatorEmpty implements CoordinatorInterface {
 
-  private String sourceFilePath;
+ // private String sourceFilePath;
 
   @Override
   public boolean startComputation(String destinationFilePath) {
