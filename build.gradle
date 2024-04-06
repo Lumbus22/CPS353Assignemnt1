@@ -46,3 +46,4 @@ protobuf {
         all()*.plugins { grpc {} }
     }
 }
+}
