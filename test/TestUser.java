@@ -1,42 +1,43 @@
 import java.io.File;
-import org.junit.Before;
-import org.junit.Test;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestUser {
 
     private CoordinatorImpl coordinator;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         this.coordinator = new CoordinatorImpl();
-        // any other initialization
     }
 
     @Test
-    public void testRun() {
+    public void testComputationSuccessWithCustomDelimiter() {
         String delimiter = ";";
-        String inputPath = "test" + File.separator + "testInputFile.test";
+        String inputPath = "test/dataTests/testInputFile.test";
         String outputPath = "test1" + File.separator + "testOutputFile.test";
 
         coordinator.setSource(inputPath);
         boolean isSuccess = coordinator.startComputationCustDelimiter(outputPath, delimiter);
 
-        assertTrue("Computation should complete successfully", isSuccess);
-        // Further assertions can be added here to validate the output
+        assertTrue(isSuccess, "Computation should complete successfully");
     }
 
-	public void run(String outputPath) {
+    // If run is intended to be a test, annotate with @Test and consider renaming for clarity
+    public void run(String outputPath) {
+        if (this.coordinator == null) {
+            this.coordinator = new CoordinatorImpl();
+        }
         String delimiter = ";";
-        String inputPath = "test" + File.separator + "testInputFile.test";
+        String inputPath = "test/dataTests/testInputFile.test";
 
         coordinator.setSource(inputPath);
         boolean isSuccess = coordinator.startComputationCustDelimiter(outputPath, delimiter);
 
-        // Consider throwing an exception or handling failure scenarios differently
-        // if the computation is not successful
         if (!isSuccess) {
             throw new RuntimeException("Computation failed");
         }
     }
 }
+

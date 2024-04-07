@@ -38,7 +38,6 @@ public class TestMultiUser {
 			testUsers.get(i).run(singleThreadedOut.getCanonicalPath());
 		}
 		
-		// Run multi threaded
 		ExecutorService threadPool = Executors.newCachedThreadPool();
 		List<Future<?>> results = new ArrayList<>();
 		String multiThreadFilePrefix = "testMultiUser.compareMultiAndSingleThreaded.test.multiThreadOut.tmp";
@@ -60,7 +59,6 @@ public class TestMultiUser {
 		});
 		
 		
-		// Check that the output is the same for multi-threaded and single-threaded
 		List<String> singleThreaded = loadAllOutput(singleThreadFilePrefix, numThreads);
 		List<String> multiThreaded = loadAllOutput(multiThreadFilePrefix, numThreads);
 		Assert.assertEquals(singleThreaded, multiThreaded);

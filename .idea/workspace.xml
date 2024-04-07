@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="902880be-5472-48f9-af14-c9877cb44af9" name="Changes" comment="I hate gradle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CoordinatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoordinatorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestCoordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestCoordinator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/TestDataSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestDataSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestIntegration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestMultiUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestMultiUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestUser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +79,8 @@
     "Gradle.TestCoordinator.testStartComputation.executor": "Run",
     "Gradle.TestDataSystem.executor": "Run",
     "Gradle.TestIntegration.executor": "Run",
+    "Gradle.TestMultiUser.executor": "Run",
+    "Gradle.TestUser.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -89,31 +96,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.TestDataSystem">
-    <configuration name="TestComputation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;TestComputation&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.TestUser">
     <configuration name="TestCoordinator" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -128,30 +111,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;TestCoordinator&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="TestCoordinator.testStartComputation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;TestCoordinator.testStartComputation&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -210,13 +169,61 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="TestMultiUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestMultiUser&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestUser&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TestUser" />
+        <item itemvalue="Gradle.TestMultiUser" />
+        <item itemvalue="Gradle.TestIntegration" />
         <item itemvalue="Gradle.TestDataSystem" />
         <item itemvalue="Gradle.TestCoordinator" />
-        <item itemvalue="Gradle.TestCoordinator.testStartComputation" />
-        <item itemvalue="Gradle.TestIntegration" />
-        <item itemvalue="Gradle.TestComputation" />
       </list>
     </recent_temporary>
   </component>
@@ -238,7 +245,7 @@
       <updated>1712245924810</updated>
       <workItem from="1712245925863" duration="400000" />
       <workItem from="1712448611981" duration="206000" />
-      <workItem from="1712448951594" duration="6155000" />
+      <workItem from="1712448951594" duration="7277000" />
     </task>
     <task id="LOCAL-00001" summary="I hate gradle">
       <option name="closed" value="true" />
@@ -304,7 +311,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712454955478</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="I hate gradle">
+      <option name="closed" value="true" />
+      <created>1712455284521</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712455284521</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +334,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test/TestCoordinator.java</url>
-          <line>8</line>
+          <line>6</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

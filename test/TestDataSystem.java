@@ -10,23 +10,21 @@ public class TestDataSystem {
 
     @Test
     public void testWriteToFile() throws IOException {
-        String testOutputFilePath = "testOutput.txt"; // Specify a path for test output
+        String testOutputFilePath = "testOutput.txt";
         String testDelimiter = ",";
-        long[][] testData = {{1, 2, 3}, {4, 5, 6}}; // Test data to write
+        long[][] testData = {{1, 2, 3}, {4, 5, 6}};
 
-        DataSystem dataSystem = new DataSystem(null, testOutputFilePath); // Initialize with null input path as it's not used here
-        dataSystem.writeToFile(testData, testDelimiter); // Perform the write operation
+        DataSystem dataSystem = new DataSystem(null, testOutputFilePath);
+        dataSystem.writeToFile(testData, testDelimiter);
 
-        // Now, read from the file and assert the contents
         try (BufferedReader reader = new BufferedReader(new FileReader(testOutputFilePath))) {
             String line = reader.readLine();
-            assertEquals("1,2,3", line); // Check first line
+            assertEquals("1,2,3", line);
 
             line = reader.readLine();
-            assertEquals("4,5,6", line); // Check second line
+            assertEquals("4,5,6", line);
         }
 
-        // Optionally, delete the test file after assertion
         new java.io.File(testOutputFilePath).delete();
     }
 }

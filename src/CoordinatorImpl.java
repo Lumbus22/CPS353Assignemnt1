@@ -9,7 +9,7 @@ public class CoordinatorImpl implements CoordinatorInterface {
 
     // Constructor that takes sourceFilePath and initializes DataSystem
     public CoordinatorImpl() {
-      this.dataSystem = new DataSystem("../test/dataTests/testInput.csv", "../test/dataTests/testOutput.csv");
+      this.dataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testOutput.csv");
   }
 
   // Additional constructor for testing, allowing dependency injection
