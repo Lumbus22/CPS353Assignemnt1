@@ -1,32 +1,30 @@
-import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 
 public class TestDataSystem {
 
     @Test
     public void testWriteToFile() throws IOException {
-        DataSystem dataSystem = new DataSystem(null, null); // Assuming no-arg constructor
-        String delimiter = ",";
-        long[][] data = {{1, 2}, {3, 4}}; // Example data initialization
+        String testOutputFilePath = "testOutput.txt";
+        String testDelimiter = ",";
+        long[][] testData = {{1, 2, 3}, {4, 5, 6}};
 
-        dataSystem.writeToFile(data, delimiter);
+        DataSystem dataSystem = new DataSystem(null, testOutputFilePath);
+        dataSystem.writeToFile(testData, testDelimiter);
 
-        // The file path where DataSystem writes the file
-        String filePath = "dataStorage\\output.txt";
+        try (BufferedReader reader = new BufferedReader(new FileReader(testOutputFilePath))) {
+            String line = reader.readLine();
+            assertEquals("1,2,3", line);
 
-        // Check that the file now exists
-        File file = new File(filePath);
-        assertTrue(file.exists(), "File does not exist: " + file.getPath());
+            line = reader.readLine();
+            assertEquals("4,5,6", line);
+        }
 
-        // Check that the file contains the expected text
-        String content = new String(Files.readAllBytes(Paths.get(filePath)));
-        assertTrue(content.contains(delimiter), "File content does not match expected text.");
+        new java.io.File(testOutputFilePath).delete();
     }
 }

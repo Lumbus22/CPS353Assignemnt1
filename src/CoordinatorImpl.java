@@ -7,11 +7,11 @@ import Interfaces.CoordinatorInterface;
 public class CoordinatorImpl implements CoordinatorInterface {
 
   private String sourceFilePath;
-  protected DataSystem dataSystem;
+  private DataSystem dataSystem;
 
     // Constructor that takes sourceFilePath and initializes DataSystem
     public CoordinatorImpl() {
-
+      this.dataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testOutput.csv");
   }
 
   // Additional constructor for testing, allowing dependency injection
@@ -41,13 +41,16 @@ public class CoordinatorImpl implements CoordinatorInterface {
       ComputationImpl computation = new ComputationImpl(sourceFilePath);
       computation.receiveDataForComputation();
       long[][] results = computation.performDigitFactorial();
-      this.dataSystem.setDestination(destinationFilePath);
       this.dataSystem.writeToFile(results, null);
       return true;
     } catch (IOException e) {
       e.printStackTrace();
       return false;
     }
+  }
+
+  public void setDataSystem(DataSystem dataSystem) {
+    this.dataSystem = dataSystem;
   }
 
   @Override
@@ -58,7 +61,6 @@ public class CoordinatorImpl implements CoordinatorInterface {
       ComputationImpl computation = new ComputationImpl(sourceFilePath);
       computation.receiveDataForComputation();
       long[][] results = computation.performDigitFactorial();
-      this.dataSystem.setDestination(destinationFilePath);
       this.dataSystem.writeToFile(results, delimiter);
       return true;
     } catch (IOException e) {

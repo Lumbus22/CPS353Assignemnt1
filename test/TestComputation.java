@@ -2,30 +2,25 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
 import java.io.IOException;
 
 public class TestComputation {
 
     private ComputationImpl computation;
-    private DataSystem mockDataSystem;
 
     @BeforeEach
     public void setUp() {
-        mockDataSystem = mock(DataSystem.class);
+        final DataSystem newDataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testoutput.csv");
         computation = new ComputationImpl("dummy/path");
-        computation.setDataSystem(mockDataSystem);
+        computation.setDataSystem(newDataSystem);
     }
 
     @Test
     public void testReceiveDataForComputation() throws IOException {
-        String[] numberStrings = {"1", "2", "3"};
-        when(mockDataSystem.getNumberStrings()).thenReturn(numberStrings);
-        
+        String[] numberStrings = {"0", "2", "3", "5"};
+
         String[] result = computation.receiveDataForComputation();
-        
+
         assertArrayEquals(numberStrings, result);
     }
 
