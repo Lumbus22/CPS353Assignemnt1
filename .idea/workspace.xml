@@ -7,6 +7,10 @@
     <list default="true" id="902880be-5472-48f9-af14-c9877cb44af9" name="Changes" comment="I hate gradle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CoordinatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoordinatorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/DataSystemInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/DataSystemInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestComputation.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestComputation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestIntegration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +69,7 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Gradle.CPS353Project [:CoordinatorImpl.main()].executor": "Run",
+    "Gradle.TestComputation.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -80,7 +85,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.TestComputation.testReceiveDataForComputation">
     <configuration name="CoordinatorImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CoordinatorImpl" />
       <module name="gradle-8.6.main" />
@@ -88,8 +93,58 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestComputation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestComputation&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestComputation.testReceiveDataForComputation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestComputation.testReceiveDataForComputation&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TestComputation.testReceiveDataForComputation" />
+        <item itemvalue="Gradle.TestComputation" />
         <item itemvalue="Application.CoordinatorImpl" />
       </list>
     </recent_temporary>
@@ -112,7 +167,7 @@
       <updated>1712245924810</updated>
       <workItem from="1712245925863" duration="400000" />
       <workItem from="1712448611981" duration="206000" />
-      <workItem from="1712448951594" duration="1364000" />
+      <workItem from="1712448951594" duration="3546000" />
     </task>
     <task id="LOCAL-00001" summary="I hate gradle">
       <option name="closed" value="true" />
@@ -146,7 +201,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712450104869</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="I hate gradle">
+      <option name="closed" value="true" />
+      <created>1712450350662</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712450350662</updated>
+    </task>
+    <task id="LOCAL-00006" summary="I hate gradle">
+      <option name="closed" value="true" />
+      <created>1712450406121</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712450406121</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

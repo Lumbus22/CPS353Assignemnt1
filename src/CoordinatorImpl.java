@@ -39,7 +39,6 @@ public class CoordinatorImpl implements CoordinatorInterface {
       ComputationImpl computation = new ComputationImpl(sourceFilePath);
       computation.receiveDataForComputation();
       long[][] results = computation.performDigitFactorial();
-      this.dataSystem.setDestination(destinationFilePath);
       this.dataSystem.writeToFile(results, null);
       return true;
     } catch (IOException e) {
@@ -56,7 +55,6 @@ public class CoordinatorImpl implements CoordinatorInterface {
       ComputationImpl computation = new ComputationImpl(sourceFilePath);
       computation.receiveDataForComputation();
       long[][] results = computation.performDigitFactorial();
-      this.dataSystem.setDestination(destinationFilePath);
       this.dataSystem.writeToFile(results, delimiter);
       return true;
     } catch (IOException e) {

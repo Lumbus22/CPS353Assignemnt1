@@ -7,7 +7,7 @@ public class TestIntegration {
     @Test
     public void testStartComputation() throws IOException {
         String filePath = "source/to/file";
-        DataSystem testDataSystem = new DataSystem("src/test/dataTests/inputtests.csv", "src/test/dataTests/testoutput.csv");
+        DataSystem testDataSystem = new DataSystem("../test/dataTests/testInput.csv", "../test/dataTests/testoutput.csv");
         
         ComputationImpl computerEngine = new ComputationImpl(filePath);
         computerEngine.setDataSystem(testDataSystem);
