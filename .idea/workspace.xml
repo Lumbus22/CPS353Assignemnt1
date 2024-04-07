@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="902880be-5472-48f9-af14-c9877cb44af9" name="Changes" comment="I hate gradle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoordinatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoordinatorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestComputation.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestComputation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestCoordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestCoordinator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestDataSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestDataSystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +89,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.TestCoordinator">
+  <component name="RunManager" selected="Gradle.TestDataSystem">
     <configuration name="TestComputation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -214,10 +212,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TestDataSystem" />
         <item itemvalue="Gradle.TestCoordinator" />
         <item itemvalue="Gradle.TestCoordinator.testStartComputation" />
         <item itemvalue="Gradle.TestIntegration" />
-        <item itemvalue="Gradle.TestDataSystem" />
         <item itemvalue="Gradle.TestComputation" />
       </list>
     </recent_temporary>
@@ -240,7 +238,7 @@
       <updated>1712245924810</updated>
       <workItem from="1712245925863" duration="400000" />
       <workItem from="1712448611981" duration="206000" />
-      <workItem from="1712448951594" duration="5845000" />
+      <workItem from="1712448951594" duration="6155000" />
     </task>
     <task id="LOCAL-00001" summary="I hate gradle">
       <option name="closed" value="true" />
@@ -298,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712452710115</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="I hate gradle">
+      <option name="closed" value="true" />
+      <created>1712454955478</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712454955478</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,5 +313,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="I hate gradle" />
     <option name="LAST_COMMIT_MESSAGE" value="I hate gradle" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/TestCoordinator.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
