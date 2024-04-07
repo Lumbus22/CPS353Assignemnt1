@@ -5,7 +5,7 @@ import Interfaces.CoordinatorInterface;
 public class CoordinatorImpl implements CoordinatorInterface {
 
   private String sourceFilePath;
-  protected DataSystem dataSystem;
+  protected DataSystem dataSystem = new DataSystem("../tests/dataTests/testInput.csv", "../tests/dataTests/testoutput.csv");
 
     // Constructor that takes sourceFilePath and initializes DataSystem
     public CoordinatorImpl() {
