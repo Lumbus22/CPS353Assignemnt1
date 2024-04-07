@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="902880be-5472-48f9-af14-c9877cb44af9" name="Changes" comment="I hate gradle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoordinatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoordinatorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestCoordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestCoordinator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestDataSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestDataSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestIntegration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestMultiUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestMultiUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestUser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +90,31 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.TestUser">
+  <component name="RunManager" selected="Gradle.TestDataSystem">
+    <configuration name="TestComputation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestComputation&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="TestCoordinator" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -135,30 +153,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;TestDataSystem&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="TestIntegration" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;TestIntegration&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -219,11 +213,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TestUser" />
-        <item itemvalue="Gradle.TestMultiUser" />
-        <item itemvalue="Gradle.TestIntegration" />
         <item itemvalue="Gradle.TestDataSystem" />
         <item itemvalue="Gradle.TestCoordinator" />
+        <item itemvalue="Gradle.TestComputation" />
+        <item itemvalue="Gradle.TestUser" />
+        <item itemvalue="Gradle.TestMultiUser" />
       </list>
     </recent_temporary>
   </component>
@@ -245,7 +239,7 @@
       <updated>1712245924810</updated>
       <workItem from="1712245925863" duration="400000" />
       <workItem from="1712448611981" duration="206000" />
-      <workItem from="1712448951594" duration="7277000" />
+      <workItem from="1712448951594" duration="7662000" />
     </task>
     <task id="LOCAL-00001" summary="I hate gradle">
       <option name="closed" value="true" />
@@ -319,7 +313,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712455284521</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="I hate gradle">
+      <option name="closed" value="true" />
+      <created>1712456457480</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1712456457480</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,6 +338,11 @@
           <url>file://$PROJECT_DIR$/test/TestCoordinator.java</url>
           <line>6</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/TestComputation.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

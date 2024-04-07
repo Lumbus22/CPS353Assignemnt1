@@ -2,8 +2,6 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import java.io.IOException;
-
  public class TestCoordinator {
 
      @Test
