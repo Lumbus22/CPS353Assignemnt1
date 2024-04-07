@@ -5,11 +5,11 @@ import Interfaces.CoordinatorInterface;
 public class CoordinatorImpl implements CoordinatorInterface {
 
   private String sourceFilePath;
-  protected DataSystem dataSystem = new DataSystem("../tests/dataTests/testInput.csv", "../tests/dataTests/testoutput.csv");
+  private DataSystem dataSystem;
 
     // Constructor that takes sourceFilePath and initializes DataSystem
     public CoordinatorImpl() {
-
+      this.dataSystem = new DataSystem("../test/dataTests/testInput.csv", "../test/dataTests/testOutput.csv");
   }
 
   // Additional constructor for testing, allowing dependency injection
@@ -45,6 +45,10 @@ public class CoordinatorImpl implements CoordinatorInterface {
       e.printStackTrace();
       return false;
     }
+  }
+
+  public void setDataSystem(DataSystem dataSystem) {
+    this.dataSystem = dataSystem;
   }
 
   @Override

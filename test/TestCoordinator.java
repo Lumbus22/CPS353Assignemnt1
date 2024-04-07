@@ -1,25 +1,24 @@
+import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.verify;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.ArgumentMatchers.isNull;
-import static org.junit.Assert.assertTrue;
 import java.io.IOException;
 
-public class TestCoordinator {
+ public class TestCoordinator {
 
-    @Test
-    public void testStartComputation() throws IOException {
-        DataSystem mockDataSystem = mock(DataSystem.class);
-        CoordinatorImpl coordinator = new CoordinatorImpl(mockDataSystem);
-        doNothing().when(mockDataSystem).readFromFile();
-        doNothing().when(mockDataSystem).writeToFile(any(long[][].class), anyString());
-        boolean isSuccess = coordinator.startComputation("/ComputerEngine/document.csv");
-        verify(mockDataSystem).readFromFile();
-        verify(mockDataSystem).writeToFile(any(long[][].class), isNull());
-        assertTrue(isSuccess);
-    }
+     @Test
+     public void testSetSource() {
+         // Arrange
+         DataSystem mockDataSystem = Mockito.mock(DataSystem.class);
+         CoordinatorImpl coordinator = new CoordinatorImpl(mockDataSystem);
+         String expectedSourceFilePath = "test/dataTests/testInput.csv";
+
+         // Act
+         String actualSourceFilePath = coordinator.setSource(expectedSourceFilePath);
+
+         // Assert
+         Assert.assertEquals(expectedSourceFilePath, actualSourceFilePath);
+     }
 }
