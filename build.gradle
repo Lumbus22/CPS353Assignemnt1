@@ -7,18 +7,18 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 sourceSets {
-	main {
-	  java {
-		srcDirs = ['../src',
-					'../build/generated/source/proto/main/grpc',
-					'../build/generated/source/proto/main/java']
-	  }
-	}
-	test {
-	  java {
-	     srcDirs = ['test']
-	  }
-	 }
+    main {
+        java {
+            srcDirs = ['src',
+                       'build/generated/source/proto/main/grpc',
+                       'build/generated/source/proto/main/java']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['test']
+        }
+    }
 }
 
 repositories {
@@ -44,9 +44,9 @@ dependencies {
     testImplementation "io.grpc:grpc-testing:${grpcVersion}"
     testImplementation "io.grpc:grpc-inprocess:${grpcVersion}"
 
-    testImplementation('junit:junit:4.12')
+    testImplementation('junit:junit:4.13.2')
     testImplementation('org.junit.jupiter:junit-jupiter:5.8.2')
-	testImplementation('org.mockito:mockito-core:5.10.0')
+    testImplementation('org.mockito:mockito-core:5.10.0')
 }
 
 protobuf {

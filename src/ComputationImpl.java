@@ -1,14 +1,12 @@
 import java.io.IOException;
 
-
+import JavaAPIs.ComputerEngineImpl;
 
 public class ComputationImpl extends ComputerEngineImpl {
-
-    protected String[] numberStrings;
     private DataSystem dataSystem;
 
     public ComputationImpl(String sourceFilePath) {
-        this.dataSystem = new DataSystem("/src/test/inputTests/inputtests.csv", "/src/test/outpputTests/outputtests.csv");
+        this.dataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testOutput.csv");
     }
 
     public void setDataSystem(DataSystem dataSystem) {
@@ -16,27 +14,21 @@ public class ComputationImpl extends ComputerEngineImpl {
     }
     
     public static void main(String[] args) throws IOException {
-        String sourceFilePath = "/src/test/inputTests/inputtests.csv";
+        String sourceFilePath = "test/dataTests/testInput.csv";
         ComputationImpl calculator = new ComputationImpl(sourceFilePath);
-        calculator.receiveDataForComputation();
-        long[][] results = calculator.performDigitFactorial();
+        String[] numberStrings = calculator.receiveDataForComputation();
+        long[][] results = calculator.performDigitFactorial(numberStrings);
         calculator.printResults(results);
     }
-
-    public String[] getNumberStrings() {
-        return numberStrings;
-    }
     
-    @Override
-    public void receiveDataForComputation() throws IOException {
-            dataSystem.readFromFile(); // Ensure data is read before access
-            this.numberStrings = dataSystem.getNumberStrings();
+    public String[] receiveDataForComputation() throws IOException {
+        dataSystem.readFromFile();
+        return dataSystem.getNumberStrings();
     }
 
-    @Override
-    public long[][] performDigitFactorial() {
-        long[][] results = new long[2][this.numberStrings.length];
-        // To remove the BOM
+    public long[][] performDigitFactorial(String[] numberStrings) {
+        long[][] results = new long[2][numberStrings.length];
+        //** REMOVE BOM FROM INPUT FILE IF NECESSARY **//
         if (numberStrings.length > 0 && !numberStrings[0].isEmpty() && numberStrings[0].charAt(0) == '\uFEFF') {
             numberStrings[0] = numberStrings[0].substring(1);
         }
@@ -54,7 +46,6 @@ public class ComputationImpl extends ComputerEngineImpl {
         return results;
     }
 
-    // Calculate the factorial for each int string
     private static long factorial(int n) {
         long result = 1;
         for (int i = 2; i <= n; i++) {
@@ -63,7 +54,6 @@ public class ComputationImpl extends ComputerEngineImpl {
         return result;
     }
 
-    // Sum the factorials for each string of numbers
     private static long digitFactorialSum(String numberString) {
         long sum = 0;
         for (char digit : numberString.toCharArray()) {
@@ -73,7 +63,6 @@ public class ComputationImpl extends ComputerEngineImpl {
         return sum;
     }
 
-    // Will remove at some point, just here for testing purposes
     public void printResults(long[][] results) {
         System.out.println("Original Number | Sum of Digit Factorials");
         System.out.println("-----------------------------------------");
@@ -81,5 +70,4 @@ public class ComputationImpl extends ComputerEngineImpl {
             System.out.printf("%15d | %24d%n", results[0][i], results[1][i]);
         }
     }
-
 }

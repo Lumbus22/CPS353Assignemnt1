@@ -1,6 +1,7 @@
 import java.io.FileWriter;
 import java.io.IOException;
 
+import Interfaces.DataSystemInterface;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -20,10 +21,9 @@ public class DataSystem implements DataSystemInterface {
         this.outPutFilePath = outPutFilePath;
     }
 
-    File file = new File("src/test/dataTests/tests.csv");
-
     @Override
     public void readFromFile() throws IOException {
+        File file = new File(inputFilePath);
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
 
@@ -45,6 +45,9 @@ public class DataSystem implements DataSystemInterface {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(this.outPutFilePath))) {
             for (long[] row : results) {
+                if (row == null) {
+                    continue; // Skip null rows
+                }
                 StringBuilder sb = new StringBuilder();
                 for (int i = 0; i < row.length; i++) {
                     sb.append(row[i]);
@@ -56,29 +59,31 @@ public class DataSystem implements DataSystemInterface {
                 writer.newLine();
             }
         }
-        
     }
 
-    //currently is not usable as the inuput and output destinations are set by the constructor
-
-
-    public void setDestination(String destinationFilePath) {
-        this.destinationFilePath = destinationFilePath;
-    }
-
-    // updateData and deleteData still need to be implemented
-
-    @Override
-    public String updateData(String identifier, String[] newData) {
-        // Updates the current data
-        return identifier;
-    }
-
-    // Delete data
-    @Override
-    public String deleteData(String identifier) {
-        // Returns the deleted data
-        return identifier;
-    }
 }
+
+
+//    //currently is not usable as the inuput and output destinations are set by the constructor
+//
+//
+//    public void setDestination(String destinationFilePath) {
+//        this.destinationFilePath = destinationFilePath;
+//    }
+//
+//    // updateData and deleteData still need to be implemented
+//
+//    @Override
+//    public String updateData(String identifier, String[] newData) {
+//        // Updates the current data
+//        return identifier;
+//    }
+//
+//    // Delete data
+//    @Override
+//    public String deleteData(String identifier) {
+//        // Returns the deleted data
+//        return identifier;
+//    }
+//}
 

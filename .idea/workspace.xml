@@ -4,13 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="902880be-5472-48f9-af14-c9877cb44af9" name="Changes" comment="" />
+    <list default="true" id="902880be-5472-48f9-af14-c9877cb44af9" name="Changes" comment="Updated tests to pass checkstyle">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ComputationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ComputationImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestIntegration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestMultiUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestMultiUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/dataTests/testoutput.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataTests/testoutput.csv" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
     <projectState path="$PROJECT_DIR$/gradle">
       <ProjectState />
     </projectState>
@@ -18,6 +29,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -28,14 +42,29 @@
     </system>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "davidvenuto"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="bf6305cb-3bb2-4e1d-9e67-2a9157215922" />
+        <option name="url" value="https://github.com/Lumbus22/CPS353Project.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2edsjYlc4RINhuVpU8UvCplCxLV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -44,13 +73,23 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Gradle.CPS353Project [:CoordinatorImpl.main()].executor": "Run",
+    "Gradle.TestComputation.executor": "Run",
+    "Gradle.TestComputation.testReceiveDataForComputation.executor": "Run",
+    "Gradle.TestCoordinator.executor": "Run",
+    "Gradle.TestCoordinator.testStartComputation.executor": "Run",
+    "Gradle.TestDataSystem.executor": "Run",
+    "Gradle.TestIntegration.executor": "Run",
+    "Gradle.TestIntegration.testStartComputation.executor": "Run",
+    "Gradle.TestMultiUser.executor": "Run",
+    "Gradle.TestUser.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "development",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Josh/Documents/GitHub/CPS353Assignemnt1",
+    "last_opened_file_path": "C:/Users/david/Documents/GitHub/CPS353Project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,10 +98,142 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="Gradle.TestMultiUser">
+    <configuration name="TestDataSystem" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestDataSystem&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestIntegration" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestIntegration&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestIntegration.testStartComputation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestIntegration.testStartComputation&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestMultiUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestMultiUser&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestUser&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.TestMultiUser" />
+        <item itemvalue="Gradle.TestUser" />
+        <item itemvalue="Gradle.TestIntegration" />
+        <item itemvalue="Gradle.TestIntegration.testStartComputation" />
+        <item itemvalue="Gradle.TestDataSystem" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="jdk-18.0.2-corretto-18.0.2-4caba194b151-5720f15e" />
+        <option value="jdk-21.0.2-corretto-21.0.2-4caba194b151-51586f01" />
       </set>
     </attachedChunks>
   </component>
@@ -75,10 +246,126 @@
       <option name="presentableId" value="Default" />
       <updated>1712245924810</updated>
       <workItem from="1712245925863" duration="400000" />
+      <workItem from="1712448611981" duration="206000" />
+      <workItem from="1712448951594" duration="9879000" />
     </task>
+    <task id="LOCAL-00001" summary="I hate gradle">
+      <option name="closed" value="true" />
+      <created>1712449766381</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712449766381</updated>
+    </task>
+    <task id="LOCAL-00002" summary="I hate gradle">
+      <option name="closed" value="true" />
+      <created>1712449870250</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712449870250</updated>
+    </task>
+    <task id="LOCAL-00003" summary="I hate gradle">
+      <option name="closed" value="true" />
+      <created>1712449926696</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712449926696</updated>
+    </task>
+    <task id="LOCAL-00004" summary="I hate gradle">
+      <option name="closed" value="true" />
+      <created>1712450104869</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712450104869</updated>
+    </task>
+    <task id="LOCAL-00005" summary="I hate gradle">
+      <option name="closed" value="true" />
+      <created>1712450350662</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712450350662</updated>
+    </task>
+    <task id="LOCAL-00006" summary="I hate gradle">
+      <option name="closed" value="true" />
+      <created>1712450406121</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712450406121</updated>
+    </task>
+    <task id="LOCAL-00007" summary="I hate gradle">
+      <option name="closed" value="true" />
+      <created>1712452710114</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712452710115</updated>
+    </task>
+    <task id="LOCAL-00008" summary="I hate gradle">
+      <option name="closed" value="true" />
+      <created>1712454955478</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712454955478</updated>
+    </task>
+    <task id="LOCAL-00009" summary="I hate gradle">
+      <option name="closed" value="true" />
+      <created>1712455284521</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712455284521</updated>
+    </task>
+    <task id="LOCAL-00010" summary="I hate gradle">
+      <option name="closed" value="true" />
+      <created>1712456457480</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1712456457480</updated>
+    </task>
+    <task id="LOCAL-00011" summary="I hate gradle">
+      <option name="closed" value="true" />
+      <created>1712501880492</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1712501880492</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Updated tests to pass checkstyle">
+      <option name="closed" value="true" />
+      <created>1712501909362</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1712501909362</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="I hate gradle" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/development' into development" />
+    <MESSAGE value="Updated tests to pass checkstyle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated tests to pass checkstyle" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/TestComputation.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
