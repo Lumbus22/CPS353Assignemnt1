@@ -1,4 +1,3 @@
-import java.io.File;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -13,10 +12,10 @@ public class TestUser {
     }
 
     @Test
-    public void testComputationSuccessWithCustomDelimiter() {
+    public void testComputationCustomDelimiter() {
         String delimiter = ";";
-        String inputPath = "test/dataTests/testInputFile.test";
-        String outputPath = "test1" + File.separator + "testOutputFile.test";
+        String inputPath = "test/dataTests/testInput.csv";
+        String outputPath = "test/dataTests/testoutput.csv";
 
         coordinator.setSource(inputPath);
         boolean isSuccess = coordinator.startComputationCustDelimiter(outputPath, delimiter);
@@ -24,13 +23,12 @@ public class TestUser {
         assertTrue(isSuccess, "Computation should complete successfully");
     }
 
-    // If run is intended to be a test, annotate with @Test and consider renaming for clarity
     public void run(String outputPath) {
         if (this.coordinator == null) {
             this.coordinator = new CoordinatorImpl();
         }
         String delimiter = ";";
-        String inputPath = "test/dataTests/testInputFile.test";
+        String inputPath = "test/dataTests/testInput.csv";
 
         coordinator.setSource(inputPath);
         boolean isSuccess = coordinator.startComputationCustDelimiter(outputPath, delimiter);

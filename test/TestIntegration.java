@@ -18,7 +18,7 @@ public class TestIntegration {
         computerEngine.receiveDataForComputation(); 
         long[][] computationResult = computerEngine.performDigitFactorial();
         
-        boolean userToComputerResult = coordinator.startComputation("destination/path");
+        boolean userToComputerResult = coordinator.startComputation(testDataSystem.outPutFilePath);
 
         assertNotNull(computationResult, "Computation result should not be null");
 

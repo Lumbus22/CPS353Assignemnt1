@@ -45,6 +45,9 @@ public class DataSystem implements DataSystemInterface {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(this.outPutFilePath))) {
             for (long[] row : results) {
+                if (row == null) {
+                    continue; // Skip null rows
+                }
                 StringBuilder sb = new StringBuilder();
                 for (int i = 0; i < row.length; i++) {
                     sb.append(row[i]);
@@ -56,8 +59,8 @@ public class DataSystem implements DataSystemInterface {
                 writer.newLine();
             }
         }
-
     }
+
 }
 
 

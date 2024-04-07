@@ -6,7 +6,7 @@ public class ComputationImpl extends ComputerEngineImpl {
     private DataSystem dataSystem;
 
     public ComputationImpl(String sourceFilePath) {
-        this.dataSystem = new DataSystem("../test/dataTests/testInput.csv", "../test/dataTests/testOutput.csv");
+        this.dataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testOutput.csv");
     }
 
     public void setDataSystem(DataSystem dataSystem) {
@@ -14,7 +14,7 @@ public class ComputationImpl extends ComputerEngineImpl {
     }
     
     public static void main(String[] args) throws IOException {
-        String sourceFilePath = "../test/dataTests/testInput.csv";
+        String sourceFilePath = "test/dataTests/testInput.csv";
         ComputationImpl calculator = new ComputationImpl(sourceFilePath);
         String[] numberStrings = calculator.receiveDataForComputation();
         long[][] results = calculator.performDigitFactorial(numberStrings);

@@ -6,8 +6,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -29,7 +28,6 @@ public class TestMultiUser {
 			testUsers.add(new TestUser());
 		}
 		
-		// Run single threaded
 		String singleThreadFilePrefix = "testMultiUser.compareMultiAndSingleThreaded.test.singleThreadOut.tmp";
 		for (int i = 0; i < numThreads; i++) {
 			File singleThreadedOut = 
@@ -61,7 +59,7 @@ public class TestMultiUser {
 		
 		List<String> singleThreaded = loadAllOutput(singleThreadFilePrefix, numThreads);
 		List<String> multiThreaded = loadAllOutput(multiThreadFilePrefix, numThreads);
-		Assert.assertEquals(singleThreaded, multiThreaded);
+		Assertions.assertEquals(singleThreaded, multiThreaded);
 	}
 
 	private List<String> loadAllOutput(String prefix, int numThreads) throws IOException {
