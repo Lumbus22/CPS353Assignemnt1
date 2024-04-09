@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0284059-a1a5-480d-97d6-662773baf79d" name="Changes" comment="Redid Proto&#10;Added Client and Server&#10;Moved stuff around">
-      <change afterPath="$PROJECT_DIR$/src/CoordinatorClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CoordinatorServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ComputationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ComputationImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoordinatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoordinatorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Implementations/CoordinatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Implementations/CoordinatorImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +90,7 @@
     "Gradle.TestUser.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging development",
+    "git-widget-placeholder": "development",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/davidvenuto/Desktop/CPS353Project",
     "node.js.detected.package.eslint": "true",
@@ -249,6 +245,7 @@
       <workItem from="1712675752663" duration="231000" />
       <workItem from="1712675993001" duration="528000" />
       <workItem from="1712676532870" duration="13073000" />
+      <workItem from="1712704523368" duration="1068000" />
     </task>
     <task id="LOCAL-00001" summary="I love gradle">
       <option name="closed" value="true" />
@@ -298,7 +295,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712704291411</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Redid Proto&#10;Added Client and Server&#10;Moved stuff around">
+      <option name="closed" value="true" />
+      <created>1712704612320</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712704612320</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
