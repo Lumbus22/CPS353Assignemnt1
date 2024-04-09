@@ -1,5 +1,3 @@
-//package edu.softwareeng.sample;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,8 +6,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -28,10 +25,9 @@ public class TestMultiUser {
 		int numThreads = 4;
 		List<TestUser> testUsers = new ArrayList<>();
 		for (int i = 0; i < numThreads; i++) {
-			testUsers.add(new TestUser(coordinator));
+			testUsers.add(new TestUser());
 		}
 		
-		// Run single threaded
 		String singleThreadFilePrefix = "testMultiUser.compareMultiAndSingleThreaded.test.singleThreadOut.tmp";
 		for (int i = 0; i < numThreads; i++) {
 			File singleThreadedOut = 
@@ -40,7 +36,6 @@ public class TestMultiUser {
 			testUsers.get(i).run(singleThreadedOut.getCanonicalPath());
 		}
 		
-		// Run multi threaded
 		ExecutorService threadPool = Executors.newCachedThreadPool();
 		List<Future<?>> results = new ArrayList<>();
 		String multiThreadFilePrefix = "testMultiUser.compareMultiAndSingleThreaded.test.multiThreadOut.tmp";
@@ -62,10 +57,9 @@ public class TestMultiUser {
 		});
 		
 		
-		// Check that the output is the same for multi-threaded and single-threaded
 		List<String> singleThreaded = loadAllOutput(singleThreadFilePrefix, numThreads);
 		List<String> multiThreaded = loadAllOutput(multiThreadFilePrefix, numThreads);
-		Assert.assertEquals(singleThreaded, multiThreaded);
+		Assertions.assertEquals(singleThreaded, multiThreaded);
 	}
 
 	private List<String> loadAllOutput(String prefix, int numThreads) throws IOException {

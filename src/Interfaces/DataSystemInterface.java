@@ -10,11 +10,11 @@ public interface DataSystemInterface {
     public void writeToFile(long[][] data, String delimiter) throws IOException;
 
     // Set output file
-    public void setDestination(String destinationFilePath);
-
-    // Update existing data
-    String updateData(String identifier, String[] newData);
-
-    // Delete data
-    String deleteData(String identifier);
+//    public void setDestination(String destinationFilePath);
+//
+//    // Update existing data
+//    String updateData(String identifier, String[] newData);
+//
+//    // Delete data
+//    String deleteData(String identifier);
 }
