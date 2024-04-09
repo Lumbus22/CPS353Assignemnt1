@@ -1,8 +1,8 @@
 package Implementations;
 
-import Interfaces.CoordinatorInterface;
-
 import java.io.IOException;
+
+import Interfaces.CoordinatorInterface;
 
 public class CoordinatorImpl implements CoordinatorInterface {
 
