@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0284059-a1a5-480d-97d6-662773baf79d" name="Changes" comment="I love gradle">
-      <change afterPath="$PROJECT_DIR$/src/CoordinatorServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/proto/coordinator_impl.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d0284059-a1a5-480d-97d6-662773baf79d" name="Changes" comment="Added gprc and protocol buffers for Coordinator API">
+      <change afterPath="$PROJECT_DIR$/src/CoordinatorClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CoordinatorServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoordinatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoordinatorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ComputationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Implementations/ComputationImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CoordinatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Implementations/CoordinatorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Implementations/DataSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JavaAPIs/dataStorage/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestComputation.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestComputation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestCoordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestCoordinator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestDataSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestDataSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestIntegration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestMultiUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestMultiUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/TestUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataTests/testoutput.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataTests/testoutput.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +89,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Gradle.CPS353Project [:CoordinatorClient.main()].executor": "Run",
+    "Gradle.CPS353Project [:CoordinatorServer.main()].executor": "Run",
     "Gradle.TestComputation.executor": "Run",
     "Gradle.TestCoordinator.executor": "Run",
     "Gradle.TestDataSystem.executor": "Run",
@@ -105,30 +113,13 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.TestComputation">
-    <configuration name="TestComputation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;TestComputation&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
+  <component name="RunManager" selected="Application.CoordinatorClient">
+    <configuration name="CoordinatorClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CoordinatorClient" />
+      <module name="gradle-8.6.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="TestDataSystem" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -241,10 +232,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TestComputation" />
+        <item itemvalue="Application.CoordinatorClient" />
         <item itemvalue="Gradle.TestUser" />
-        <item itemvalue="Gradle.TestIntegration" />
         <item itemvalue="Gradle.TestMultiUser" />
+        <item itemvalue="Gradle.TestIntegration" />
         <item itemvalue="Gradle.TestDataSystem" />
       </list>
     </recent_temporary>
@@ -268,7 +259,7 @@
       <workItem from="1712193057721" duration="374000" />
       <workItem from="1712675752663" duration="231000" />
       <workItem from="1712675993001" duration="528000" />
-      <workItem from="1712676532870" duration="3828000" />
+      <workItem from="1712676532870" duration="8279000" />
     </task>
     <task id="LOCAL-00001" summary="I love gradle">
       <option name="closed" value="true" />
@@ -294,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712676304004</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added gprc and protocol buffers for Coordinator API">
+      <option name="closed" value="true" />
+      <created>1712684211408</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712684211408</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,6 +301,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="I love gradle" />
-    <option name="LAST_COMMIT_MESSAGE" value="I love gradle" />
+    <MESSAGE value="Added gprc and protocol buffers for Coordinator API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added gprc and protocol buffers for Coordinator API" />
   </component>
 </project>

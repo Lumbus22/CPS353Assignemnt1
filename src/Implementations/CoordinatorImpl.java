@@ -1,3 +1,5 @@
+package Implementations;
+
 import java.io.IOException;
 
 import Interfaces.CoordinatorInterface;
@@ -7,7 +9,7 @@ public class CoordinatorImpl implements CoordinatorInterface {
   private String sourceFilePath;
   private DataSystem dataSystem;
 
-    // Constructor that takes sourceFilePath and initializes DataSystem
+    // Constructor that takes sourceFilePath and initializes Implementations.DataSystem
     public CoordinatorImpl() {
       this.dataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testOutput.csv");
   }
