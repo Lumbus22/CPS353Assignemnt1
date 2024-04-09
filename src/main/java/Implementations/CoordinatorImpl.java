@@ -1,23 +1,21 @@
-import java.io.IOException;
+package Implementations;
 
 import Interfaces.CoordinatorInterface;
+
+import java.io.IOException;
 
 public class CoordinatorImpl implements CoordinatorInterface {
 
   private String sourceFilePath;
   private DataSystem dataSystem;
 
-    // Constructor that takes sourceFilePath and initializes DataSystem
-    public CoordinatorImpl() {
-      this.dataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testOutput.csv");
+  public CoordinatorImpl() {
+    this.dataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testOutput.csv");
   }
 
-  // Additional constructor for testing, allowing dependency injection
   public CoordinatorImpl(DataSystem dataSystem) {
-      this.dataSystem = dataSystem;
+    this.dataSystem = dataSystem;
   }
-
-  // add functionality to let user create their own output file at some point
 
   public static void main(String[] args) {
     CoordinatorImpl coordinator = new CoordinatorImpl();
@@ -67,7 +65,6 @@ public class CoordinatorImpl implements CoordinatorInterface {
     }
   }
 
-  // Allows user to set inputFile source (in form of csv for now)
   @Override
   public String setSource(String inputFile) {
     this.sourceFilePath = inputFile;
@@ -75,3 +72,4 @@ public class CoordinatorImpl implements CoordinatorInterface {
   }
 
 }
+
