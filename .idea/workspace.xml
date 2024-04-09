@@ -105,7 +105,7 @@
       <updated>1712193056620</updated>
       <workItem from="1712193057721" duration="374000" />
       <workItem from="1712675752663" duration="231000" />
-      <workItem from="1712675993001" duration="65000" />
+      <workItem from="1712675993001" duration="249000" />
     </task>
     <task id="LOCAL-00001" summary="I love gradle">
       <option name="closed" value="true" />
@@ -115,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712675813149</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="I love gradle">
+      <option name="closed" value="true" />
+      <created>1712676193538</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712676193539</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
