@@ -85,6 +85,27 @@ public class CoordinatorImpl implements CoordinatorInterface {
     }
     return sb.toString();
   }
+
+    public static void main(String[] args) {
+      String serverAddress = "localhost";
+      int serverPort = 50058;
+
+      String sourceFilePath = "test/dataTests/testInput.csv";
+      String destinationFilePath = "test/dataTests/testoutput.csv";
+
+      CoordinatorImpl coordinator = new CoordinatorImpl(serverAddress, serverPort);
+
+      coordinator.setSource(sourceFilePath);
+
+      boolean success = coordinator.startComputation(destinationFilePath);
+
+      if (success) {
+        System.out.println("Computation and file writing successful.");
+      } else {
+        System.out.println("Computation or file writing failed.");
+      }
+  }
+
 }
 
 

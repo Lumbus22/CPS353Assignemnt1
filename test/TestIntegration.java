@@ -2,39 +2,43 @@ import Implementations.ComputationImpl;
 import Implementations.CoordinatorImpl;
 import Implementations.DataSystem;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.io.IOException;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestIntegration {
 
     @Test
     public void testStartComputation() {
-        // Define file paths
-        String inputFilePath = "test/dataTests/testInput.csv";
-        String outputFilePath = "test/dataTests/testOutput.csv";
+        try {
+            String inputFilePath = "test/dataTests/testInput.csv";
+            String outputFilePath = "test/dataTests/testOutput.csv";
 
-        // Initialize DataSystem with input and output file paths
-        DataSystem testDataSystem = new DataSystem(inputFilePath, outputFilePath);
+            DataSystem testDataSystem = new DataSystem(inputFilePath, outputFilePath);
 
-        // Initialize ComputationImpl with the input file path
-        ComputationImpl computationEngine = new ComputationImpl(inputFilePath);
-        computationEngine.setDataSystem(testDataSystem);
+            ComputationImpl computationEngine = new ComputationImpl(inputFilePath);
+            computationEngine.setDataSystem(testDataSystem);
 
-        // Initialize CoordinatorImpl, assuming it requires server address and port
-        String serverAddress = "localhost";
-        int serverPort = 50051;
-        CoordinatorImpl coordinator = new CoordinatorImpl(serverAddress, serverPort);
+            String serverAddress = "localhost";
+            int serverPort = 50058;
+            CoordinatorImpl coordinator = new CoordinatorImpl(serverAddress, serverPort);
 
-        // Trigger computation and interaction between components
-        computationEngine.receiveDataForComputation();
-        long[][] computationResult = computationEngine.performDigitFactorial();
+            coordinator.setSource(inputFilePath);
 
-        // Start computation by providing the output file path to the coordinator
-        boolean userToComputerResult = coordinator.startComputation(outputFilePath);
+            computationEngine.receiveDataForComputation();
+            long[][] computationResult = computationEngine.performDigitFactorial();
 
-        // Assertions to verify the outcomes
-        assertNotNull(computationResult, "Computation result should not be null");
-        assertTrue(userToComputerResult, "Processing user request failed");
+            boolean userToComputerResult = coordinator.startComputation(outputFilePath);
+
+            assertNotNull(computationResult, "Computation result should not be null");
+            assertTrue(userToComputerResult, "Processing user request failed");
+        } catch (IOException e) {
+            e.printStackTrace();
+            fail("IOException was thrown");
+        }
     }
+
+
 }
 

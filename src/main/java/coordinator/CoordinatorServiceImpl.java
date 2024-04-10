@@ -16,7 +16,7 @@ public class CoordinatorServiceImpl extends CoordinatorServiceImplBase {
         try {
             String data = "Data from " + this.sourceFilePath;
             result = processData(data); // Now 'result' is accessible here
-            success = result != null && !result.isEmpty();
+            success = !result.isEmpty();
             System.out.println("Computation result: " + result);
         } catch (Exception e) {
             e.printStackTrace();
