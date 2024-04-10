@@ -37,4 +37,6 @@ message StartComputationCustDelimiterRequest {
 
 message ComputationResponse {
   bool isSuccess = 1;
+  string message = 2;
+  string computationResult = 3;
 }

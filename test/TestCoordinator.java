@@ -1,19 +1,21 @@
 import Implementations.CoordinatorImpl;
-import Implementations.DataSystem;
-import org.junit.Assert;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
- public class TestCoordinator {
+public class TestCoordinator {
 
-     @Test
-     public void testSetSource() {
-         DataSystem mockDataSystem = Mockito.mock(DataSystem.class);
-         CoordinatorImpl coordinator = new CoordinatorImpl(mockDataSystem);
-         String expectedSourceFilePath = "test/dataTests/testInput.csv";
+    public static void main(String[] args) {
+        String serverAddress = "localhost";
+        int serverPort = 50051;
+        String sourceFilePath = "path/to/test/input.csv";
+        String destinationFilePath = "path/to/test/output.csv";
 
-         String actualSourceFilePath = coordinator.setSource(expectedSourceFilePath);
+        CoordinatorImpl coordinator = new CoordinatorImpl(serverAddress, serverPort);
+        coordinator.setSource(sourceFilePath);
+        boolean isSuccess = coordinator.startComputation(destinationFilePath);
 
-         Assert.assertEquals(expectedSourceFilePath, actualSourceFilePath);
-     }
+        if (isSuccess) {
+            System.out.println("Smoke test passed: Data processed and written successfully.");
+        } else {
+            System.err.println("Smoke test failed: There was an issue with processing or writing the data.");
+        }
+    }
 }

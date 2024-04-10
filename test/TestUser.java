@@ -9,14 +9,16 @@ public class TestUser {
 
     @BeforeEach
     public void setUp() {
-        this.coordinator = new CoordinatorImpl();
+        String serverAddress = "localhost";
+        int serverPort = 50051;
+        this.coordinator = new CoordinatorImpl(serverAddress, serverPort);
     }
 
     @Test
     public void testComputationCustomDelimiter() {
         String delimiter = ";";
         String inputPath = "test/dataTests/testInput.csv";
-        String outputPath = "test/dataTests/testoutput.csv";
+        String outputPath = "test/dataTests/testOutput.csv";
 
         coordinator.setSource(inputPath);
         boolean isSuccess = coordinator.startComputationCustDelimiter(outputPath, delimiter);
@@ -26,7 +28,9 @@ public class TestUser {
 
     public void run(String outputPath) {
         if (this.coordinator == null) {
-            this.coordinator = new CoordinatorImpl();
+            String serverAddress = "localhost";
+            int serverPort = 50051;
+            this.coordinator = new CoordinatorImpl(serverAddress, serverPort);
         }
         String delimiter = ";";
         String inputPath = "test/dataTests/testInput.csv";

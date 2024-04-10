@@ -1,68 +1,72 @@
 package Implementations;
-
-import java.io.IOException;
-
 import Interfaces.CoordinatorInterface;
+import datasystem.Datasystem;
+import datasystem.Datasystem.ReadRequest;
+import datasystem.DataSystemGrpc;
+
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
 
 public class CoordinatorImpl implements CoordinatorInterface {
 
   private String sourceFilePath;
-  private DataSystem dataSystem;
+  private final DataSystemGrpc.DataSystemBlockingStub dataSystemStub;
 
-  public CoordinatorImpl() {
-    this.dataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testOutput.csv");
+  public CoordinatorImpl(String serverAddress, int serverPort) {
+    ManagedChannel channel = ManagedChannelBuilder.forAddress(serverAddress, serverPort)
+            .usePlaintext()
+            .build();
+    this.dataSystemStub = DataSystemGrpc.newBlockingStub(channel);
   }
 
-  public CoordinatorImpl(DataSystem dataSystem) {
-    this.dataSystem = dataSystem;
-  }
-
-  public static void main(String[] args) {
-    CoordinatorImpl coordinator = new CoordinatorImpl();
-    String sourceFilePath = "ComputerEngine/document.csv";
-    coordinator.setSource(sourceFilePath);
-    String destinationFilePath = "ComputerEngine/document2.csv";
-    boolean isSuccess = coordinator.startComputationCustDelimiter(destinationFilePath, "/");
-    if (isSuccess) {
-      System.out.println("Computation completed successfully and results are written to " + destinationFilePath);
-    } else {
-      System.err.println("Computation failed.");
-    }
-  }
 
   @Override
   public boolean startComputation(String destinationFilePath) {
-    try {
-      this.dataSystem.readFromFile();
-      ComputationImpl computation = new ComputationImpl(sourceFilePath);
-      computation.receiveDataForComputation();
-      long[][] results = computation.performDigitFactorial();
-      this.dataSystem.writeToFile(results, null);
-      return true;
-    } catch (IOException e) {
-      e.printStackTrace();
-      return false;
-    }
-  }
+    Datasystem.ReadResponse readResponse = dataSystemStub.readFromFile(ReadRequest.newBuilder()
+            .setInputFilePath(sourceFilePath)
+            .build());
 
-  public void setDataSystem(DataSystem dataSystem) {
-    this.dataSystem = dataSystem;
+    String concatenatedStrings = String.join("\n", readResponse.getNumberStringsList());
+
+    ComputationImpl computation = new ComputationImpl(concatenatedStrings);
+    long[][] results = computation.performDigitFactorial();
+
+    Datasystem.WriteRequest.Builder writeRequestBuilder = Datasystem.WriteRequest.newBuilder()
+            .setOutputFilePath(destinationFilePath);
+
+    for (long[] resultRow : results) {
+      String line = convertResultRowToString(resultRow);
+      writeRequestBuilder.addNumbers(line);
+    }
+
+    Datasystem.WriteResponse writeResponse = dataSystemStub.writeToFile(writeRequestBuilder.build());
+
+    return writeResponse.getSuccess();
   }
 
   @Override
   public boolean startComputationCustDelimiter(String destinationFilePath, String delimiter) {
-    try {
-      this.dataSystem = new DataSystem(sourceFilePath, destinationFilePath);
-      this.dataSystem.readFromFile();
-      ComputationImpl computation = new ComputationImpl(sourceFilePath);
-      computation.receiveDataForComputation();
-      long[][] results = computation.performDigitFactorial();
-      this.dataSystem.writeToFile(results, delimiter);
-      return true;
-    } catch (IOException e) {
-      e.printStackTrace();
-      return false;
+    Datasystem.ReadResponse readResponse = dataSystemStub.readFromFile(ReadRequest.newBuilder()
+            .setInputFilePath(sourceFilePath)
+            .build());
+
+    String concatenatedStrings = String.join(delimiter, readResponse.getNumberStringsList());
+
+    ComputationImpl computation = new ComputationImpl(concatenatedStrings);
+    long[][] results = computation.performDigitFactorial();
+
+    Datasystem.WriteRequest.Builder writeRequestBuilder = Datasystem.WriteRequest.newBuilder()
+            .setOutputFilePath(destinationFilePath)
+            .setDelimiter(delimiter);
+
+    for (long[] resultRow : results) {
+      String line = convertResultRowToString(resultRow);
+      writeRequestBuilder.addNumbers(line);
     }
+
+    Datasystem.WriteResponse writeResponse = dataSystemStub.writeToFile(writeRequestBuilder.build());
+
+    return writeResponse.getSuccess();
   }
 
   @Override
@@ -71,5 +75,16 @@ public class CoordinatorImpl implements CoordinatorInterface {
     return this.sourceFilePath;
   }
 
+  private String convertResultRowToString(long[] resultRow) {
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < resultRow.length; i++) {
+      if (i > 0) {
+        sb.append(",");
+      }
+      sb.append(resultRow[i]);
+    }
+    return sb.toString();
+  }
 }
+
 

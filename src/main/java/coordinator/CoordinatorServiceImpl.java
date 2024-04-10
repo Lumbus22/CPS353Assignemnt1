@@ -11,23 +11,27 @@ public class CoordinatorServiceImpl extends CoordinatorServiceImplBase {
     @Override
     public void startComputation(SetSourceRequest request, StreamObserver<ComputationResponse> responseObserver) {
         boolean success = false;
+        String result = "";
 
         try {
             String data = "Data from " + this.sourceFilePath;
-            String result = processData(data);
+            result = processData(data); // Now 'result' is accessible here
             success = result != null && !result.isEmpty();
             System.out.println("Computation result: " + result);
         } catch (Exception e) {
             e.printStackTrace();
+            result = "Error processing data"; // You can assign a default value or error message to 'result' here
         }
 
         ComputationResponse response = ComputationResponse.newBuilder()
                 .setIsSuccess(success)
+                .setMessage(result) // 'result' is accessible here as well
                 .build();
 
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
+
 
     private String processData(String data) {
         return "Processed: " + data;
