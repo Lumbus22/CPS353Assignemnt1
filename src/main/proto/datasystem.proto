@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package datasystem;
+
+message ReadRequest {
+  string inputFilePath = 1;
+}
+
+message ReadResponse {
+  repeated string numberStrings = 1;
+}
+
+message WriteRequest {
+  string outputFilePath = 1;
+  repeated string numbers = 2;
+  string delimiter = 3;
+}
+
+message WriteResponse {
+  bool success = 1;
+}
+
+service DataSystem {
+  rpc ReadFromFile(ReadRequest) returns (ReadResponse);
+  rpc WriteToFile(WriteRequest) returns (WriteResponse);
+}
+
