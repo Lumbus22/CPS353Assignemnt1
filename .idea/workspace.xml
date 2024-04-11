@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0284059-a1a5-480d-97d6-662773baf79d" name="Changes" comment="OH MY GOD THE COORDINATOR CLIENT WORKS">
-      <change beforePath="$PROJECT_DIR$/test/TestComputation.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestComputation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/dataTests/dsInput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/dataTests/dsOutput.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datasystem/DataSystemClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasystem/DataSystemClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +85,7 @@
     "Gradle.CPS353Project [:CoordinatorClient.main()].executor": "Run",
     "Gradle.CPS353Project [:CoordinatorImpl.main()].executor": "Run",
     "Gradle.CPS353Project [:CoordinatorServer.main()].executor": "Run",
+    "Gradle.CPS353Project [:DataSystemClient.main()].executor": "Run",
     "Gradle.CPS353Project [:DataSystemServer.main()].executor": "Run",
     "Gradle.CPS353Project [:TestCoordinator.main()].executor": "Run",
     "Gradle.TestComputation.executor": "Run",
@@ -114,20 +118,7 @@
       <recent name="coordinator" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CoordinatorClient">
-    <configuration name="ComputationImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Implementations.ComputationImpl" />
-      <module name="gradle-8.6.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Implementations.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.DataSystemClient">
     <configuration name="CoordinatorClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="coordinator.CoordinatorClient" />
       <module name="gradle-8.6.main" />
@@ -148,6 +139,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="coordinator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataSystemClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="datasystem.DataSystemClient" />
+      <module name="gradle-8.6.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="datasystem.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -218,11 +222,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DataSystemClient" />
+        <item itemvalue="Gradle.TestComputation" />
         <item itemvalue="Application.CoordinatorClient" />
         <item itemvalue="Application.CoordinatorServer" />
-        <item itemvalue="Gradle.TestComputation" />
         <item itemvalue="Gradle.TestComputation.testReceiveDataForComputation" />
-        <item itemvalue="Application.ComputationImpl" />
       </list>
     </recent_temporary>
   </component>
@@ -250,7 +254,7 @@
       <workItem from="1712712161822" duration="7898000" />
       <workItem from="1712793136900" duration="448000" />
       <workItem from="1712793616953" duration="413000" />
-      <workItem from="1712794095403" duration="9686000" />
+      <workItem from="1712794095403" duration="10433000" />
     </task>
     <task id="LOCAL-00001" summary="I love gradle">
       <option name="closed" value="true" />
@@ -404,7 +408,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712855874095</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="OH MY GOD THE COORDINATOR CLIENT WORKS">
+      <option name="closed" value="true" />
+      <created>1712855928364</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1712855928364</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
