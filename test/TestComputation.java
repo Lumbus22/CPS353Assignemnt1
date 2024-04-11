@@ -19,7 +19,7 @@ public class TestComputation {
 
     @Test
     public void testReceiveDataForComputation() throws IOException {
-        String[] numberStrings = {"10", "11", "12", "13", "154"};
+        String[] numberStrings = {"22", "23", "24", "25", "26"};
 
         String[] result = computation.receiveDataForComputation();
 
