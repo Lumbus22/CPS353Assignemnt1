@@ -1,6 +1,9 @@
 package coordinator;
 
-import coordinator.CoordinatorImplOuterClass.*;
+import coordinator.CoordinatorImplOuterClass.SetSourceRequest;
+import coordinator.CoordinatorImplOuterClass.ComputationResponse;
+import coordinator.CoordinatorImplOuterClass.StartComputationCustDelimiterRequest;
+import coordinator.CoordinatorImplOuterClass.SetSourceResponse;
 import coordinator.CoordinatorServiceGrpc.CoordinatorServiceImplBase;
 import io.grpc.stub.StreamObserver;
 
