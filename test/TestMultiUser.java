@@ -18,8 +18,8 @@ public class TestMultiUser {
 
 	@BeforeEach
 	public void initializeComputeEngine() {
-		String serverAddress = "localhost"; // default server address
-		int serverPort = 50058; // default server port
+		String serverAddress = "localhost";
+		int serverPort = 50058;
 		coordinator = new CoordinatorImpl(serverAddress, serverPort);
 	}
 
@@ -28,7 +28,7 @@ public class TestMultiUser {
 		int numThreads = 4;
 		List<TestUser> testUsers = new ArrayList<>();
 		for (int i = 0; i < numThreads; i++) {
-			testUsers.add(new TestUser()); // Ensure TestUser is modified to handle CoordinatorImpl initialization properly
+			testUsers.add(new TestUser());
 		}
 
 		String singleThreadFilePrefix = "testMultiUser.compareMultiAndSingleThreaded.test.singleThreadOut.tmp";
@@ -45,12 +45,12 @@ public class TestMultiUser {
 			File multiThreadedOut = new File(multiThreadFilePrefix + i);
 			multiThreadedOut.deleteOnExit();
 			String multiThreadOutputPath = multiThreadedOut.getCanonicalPath();
-			TestUser testUser = testUsers.get(i); // Ensure TestUser is modified to handle CoordinatorImpl initialization properly
+			TestUser testUser = testUsers.get(i);
 			results.add(threadPool.submit(() -> testUser.run(multiThreadOutputPath)));
 		}
 
 		for (Future<?> future : results) {
-			future.get(); // This will block until all tasks complete
+			future.get();
 		}
 
 		List<String> singleThreaded = loadAllOutput(singleThreadFilePrefix, numThreads);

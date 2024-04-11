@@ -1,21 +1,23 @@
 import Implementations.CoordinatorImpl;
+import org.junit.jupiter.api.Test;
 
 public class TestCoordinator {
 
-    public static void main(String[] args) {
+    @Test
+    public void testCoordinator() {
         String serverAddress = "localhost";
         int serverPort = 50059;
-        String sourceFilePath = "path/to/test/input.csv";
-        String destinationFilePath = "path/to/test/output.csv";
+        String sourceFilePath = "test/dataTests/testInput.csv";
+        String destinationFilePath = "test/dataTests/testoutput.csv";
 
         CoordinatorImpl coordinator = new CoordinatorImpl(serverAddress, serverPort);
         coordinator.setSource(sourceFilePath);
         boolean isSuccess = coordinator.startComputation(destinationFilePath);
 
         if (isSuccess) {
-            System.out.println("Smoke test passed: Data processed and written successfully.");
+            System.out.println("Test successful");
         } else {
-            System.err.println("Smoke test failed: There was an issue with processing or writing the data.");
+            System.err.println("Test failed");
         }
     }
 }
