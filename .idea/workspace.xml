@@ -7,8 +7,6 @@
     <list default="true" id="d0284059-a1a5-480d-97d6-662773baf79d" name="Changes" comment="Fixed most of the tests">
       <change beforePath="$PROJECT_DIR$/.github/workflows/gradle.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/gradle.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestCoordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestCoordinator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestMultiUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestMultiUser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +87,7 @@
     "Gradle.CPS353Project [:TestCoordinator.main()].executor": "Run",
     "Gradle.TestComputation.executor": "Run",
     "Gradle.TestCoordinator.executor": "Run",
+    "Gradle.TestCoordinator.testCoordinator.executor": "Run",
     "Gradle.TestDataSystem.executor": "Run",
     "Gradle.TestIntegration.executor": "Run",
     "Gradle.TestMultiUser.executor": "Run",
@@ -115,7 +114,7 @@
       <recent name="coordinator" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestCoordinator">
+  <component name="RunManager" selected="Gradle.TestCoordinator.testCoordinator">
     <configuration name="TestCoordinator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestCoordinator" />
       <module name="gradle-8.6.test" />
@@ -123,7 +122,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDataSystem" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestCoordinator.testCoordinator" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -136,7 +135,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;TestDataSystem&quot;" />
+            <option value="&quot;TestCoordinator.testCoordinator&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -234,11 +233,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TestCoordinator.testCoordinator" />
         <item itemvalue="Application.TestCoordinator" />
         <item itemvalue="Gradle.TestMultiUser" />
         <item itemvalue="Gradle.TestUser.testComputationCustomDelimiter" />
         <item itemvalue="Gradle.TestIntegration" />
-        <item itemvalue="Gradle.TestDataSystem" />
       </list>
     </recent_temporary>
   </component>
@@ -266,7 +265,7 @@
       <workItem from="1712712161822" duration="7898000" />
       <workItem from="1712793136900" duration="448000" />
       <workItem from="1712793616953" duration="413000" />
-      <workItem from="1712794095403" duration="3028000" />
+      <workItem from="1712794095403" duration="3396000" />
     </task>
     <task id="LOCAL-00001" summary="I love gradle">
       <option name="closed" value="true" />
@@ -380,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712795860130</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Fixed most of the tests">
+      <option name="closed" value="true" />
+      <created>1712847962237</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1712847962237</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
