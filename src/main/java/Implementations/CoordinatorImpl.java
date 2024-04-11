@@ -34,10 +34,19 @@ public class CoordinatorImpl implements CoordinatorInterface {
     Datasystem.WriteRequest.Builder writeRequestBuilder = Datasystem.WriteRequest.newBuilder()
             .setOutputFilePath(destinationFilePath);
 
-    for (long[] resultRow : results) {
-      String line = convertResultRowToString(resultRow);
-      writeRequestBuilder.addNumbers(line);
+    if (results == null) {
+      throw new IllegalStateException("Computation results are null");
     }
+
+    for (long[] resultRow : results) {
+      if (resultRow != null) {
+        String line = convertResultRowToString(resultRow);
+        writeRequestBuilder.addNumbers(line);
+      } else {
+        System.out.println("Result was null");
+      }
+    }
+
 
     Datasystem.WriteResponse writeResponse = dataSystemStub.writeToFile(writeRequestBuilder.build());
 
@@ -76,6 +85,10 @@ public class CoordinatorImpl implements CoordinatorInterface {
   }
 
   private String convertResultRowToString(long[] resultRow) {
+    if (resultRow == null) {
+      return "";
+    }
+
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < resultRow.length; i++) {
       if (i > 0) {
@@ -85,6 +98,7 @@ public class CoordinatorImpl implements CoordinatorInterface {
     }
     return sb.toString();
   }
+
 
     public static void main(String[] args) {
       String serverAddress = "localhost";

@@ -10,7 +10,7 @@ public class TestUser {
     @BeforeEach
     public void setUp() {
         String serverAddress = "localhost";
-        int serverPort = 50051;
+        int serverPort = 50058;
         this.coordinator = new CoordinatorImpl(serverAddress, serverPort);
     }
 
@@ -29,7 +29,7 @@ public class TestUser {
     public void run(String outputPath) {
         if (this.coordinator == null) {
             String serverAddress = "localhost";
-            int serverPort = 50051;
+            int serverPort = 50058;
             this.coordinator = new CoordinatorImpl(serverAddress, serverPort);
         }
         String delimiter = ";";

@@ -4,7 +4,7 @@ public class TestCoordinator {
 
     public static void main(String[] args) {
         String serverAddress = "localhost";
-        int serverPort = 50051;
+        int serverPort = 50059;
         String sourceFilePath = "path/to/test/input.csv";
         String destinationFilePath = "path/to/test/output.csv";
 

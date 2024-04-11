@@ -19,7 +19,7 @@ public class TestMultiUser {
 	@BeforeEach
 	public void initializeComputeEngine() {
 		String serverAddress = "localhost"; // default server address
-		int serverPort = 50051; // default server port
+		int serverPort = 50058; // default server port
 		coordinator = new CoordinatorImpl(serverAddress, serverPort);
 	}
 
