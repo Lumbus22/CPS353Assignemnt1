@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0284059-a1a5-480d-97d6-662773baf79d" name="Changes" comment="Fixed most of the tests">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/gradle.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/gradle.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/datasystem/DataSystemClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Implementations/ComputationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Implementations/ComputationImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Implementations/CoordinatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Implementations/CoordinatorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Implementations/DataSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Implementations/DataSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coordinator/CoordinatorClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coordinator/CoordinatorClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestCoordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestCoordinator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestIntegration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestMultiUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestMultiUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/dataTests/testInput.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataTests/testInput.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/dataTests/testoutput.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataTests/testoutput.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +90,7 @@
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Gradle.CPS353Project [:ComputationImpl.main()].executor": "Run",
-    "Gradle.CPS353Project [:CoordinatorClient.main()].executor": "Run",
+    "Gradle.CPS353Project [:CoordinatorClient.main()].executor": "Debug",
     "Gradle.CPS353Project [:CoordinatorImpl.main()].executor": "Run",
     "Gradle.CPS353Project [:CoordinatorServer.main()].executor": "Run",
     "Gradle.CPS353Project [:DataSystemServer.main()].executor": "Run",
@@ -114,15 +124,48 @@
       <recent name="coordinator" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TestCoordinator.testCoordinator">
-    <configuration name="TestCoordinator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestCoordinator" />
-      <module name="gradle-8.6.test" />
+  <component name="RunManager" selected="Application.CoordinatorClient">
+    <configuration name="ComputationImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Implementations.ComputationImpl" />
+      <module name="gradle-8.6.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Implementations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCoordinator.testCoordinator" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CoordinatorClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="coordinator.CoordinatorClient" />
+      <module name="gradle-8.6.main" />
+      <option name="PROGRAM_PARAMETERS" value="test/dataTests/testInput.csv test/dataTests/testoutput.csv &quot;X&quot;" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="coordinator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoordinatorImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Implementations.CoordinatorImpl" />
+      <module name="gradle-8.6.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Implementations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestComputation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -135,7 +178,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;TestCoordinator.testCoordinator&quot;" />
+            <option value="&quot;TestComputation&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -146,7 +189,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="TestIntegration" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestComputation.testReceiveDataForComputation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -159,55 +202,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;TestIntegration&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="TestMultiUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;TestMultiUser&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="TestUser.testComputationCustomDelimiter" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;TestUser.testComputationCustomDelimiter&quot;" />
+            <option value="&quot;TestComputation.testReceiveDataForComputation&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -233,11 +228,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TestCoordinator.testCoordinator" />
-        <item itemvalue="Application.TestCoordinator" />
-        <item itemvalue="Gradle.TestMultiUser" />
-        <item itemvalue="Gradle.TestUser.testComputationCustomDelimiter" />
-        <item itemvalue="Gradle.TestIntegration" />
+        <item itemvalue="Gradle.TestComputation" />
+        <item itemvalue="Gradle.TestComputation.testReceiveDataForComputation" />
+        <item itemvalue="Application.ComputationImpl" />
+        <item itemvalue="Application.CoordinatorImpl" />
+        <item itemvalue="Application.CoordinatorClient" />
       </list>
     </recent_temporary>
   </component>
@@ -265,7 +260,7 @@
       <workItem from="1712712161822" duration="7898000" />
       <workItem from="1712793136900" duration="448000" />
       <workItem from="1712793616953" duration="413000" />
-      <workItem from="1712794095403" duration="3396000" />
+      <workItem from="1712794095403" duration="6996000" />
     </task>
     <task id="LOCAL-00001" summary="I love gradle">
       <option name="closed" value="true" />
@@ -387,7 +382,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712847962237</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Fixed most of the tests">
+      <option name="closed" value="true" />
+      <created>1712848130758</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1712848130758</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

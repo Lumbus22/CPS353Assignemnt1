@@ -11,18 +11,14 @@ import Implementations.CoordinatorImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 public class TestMultiUser {
 
 	private CoordinatorImpl coordinator;
 
 	@BeforeEach
 	public void initializeComputeEngine() {
-		String serverAddress = "localhost";
-		int serverPort = 50058;
-		coordinator = new CoordinatorImpl(serverAddress, serverPort);
+		coordinator = new CoordinatorImpl();
 	}
-
 	@Test
 	public void compareMultiAndSingleThreaded() throws Exception {
 		int numThreads = 4;
@@ -33,7 +29,8 @@ public class TestMultiUser {
 
 		String singleThreadFilePrefix = "testMultiUser.compareMultiAndSingleThreaded.test.singleThreadOut.tmp";
 		for (int i = 0; i < numThreads; i++) {
-			File singleThreadedOut = new File(singleThreadFilePrefix + i);
+			File singleThreadedOut =
+					new File(singleThreadFilePrefix + i);
 			singleThreadedOut.deleteOnExit();
 			testUsers.get(i).run(singleThreadedOut.getCanonicalPath());
 		}
@@ -42,29 +39,34 @@ public class TestMultiUser {
 		List<Future<?>> results = new ArrayList<>();
 		String multiThreadFilePrefix = "testMultiUser.compareMultiAndSingleThreaded.test.multiThreadOut.tmp";
 		for (int i = 0; i < numThreads; i++) {
-			File multiThreadedOut = new File(multiThreadFilePrefix + i);
+			File multiThreadedOut =
+					new File(multiThreadFilePrefix + i);
 			multiThreadedOut.deleteOnExit();
 			String multiThreadOutputPath = multiThreadedOut.getCanonicalPath();
 			TestUser testUser = testUsers.get(i);
 			results.add(threadPool.submit(() -> testUser.run(multiThreadOutputPath)));
 		}
 
-		for (Future<?> future : results) {
-			future.get();
-		}
+		results.forEach(future -> {
+			try {
+				future.get();
+			} catch (Exception e) {
+				throw new RuntimeException(e);
+			}
+		});
+
 
 		List<String> singleThreaded = loadAllOutput(singleThreadFilePrefix, numThreads);
 		List<String> multiThreaded = loadAllOutput(multiThreadFilePrefix, numThreads);
 		Assertions.assertEquals(singleThreaded, multiThreaded);
 	}
-
 	private List<String> loadAllOutput(String prefix, int numThreads) throws IOException {
 		List<String> result = new ArrayList<>();
 		for (int i = 0; i < numThreads; i++) {
-			File multiThreadedOut = new File(prefix + i);
+			File multiThreadedOut =
+					new File(prefix + i);
 			result.addAll(Files.readAllLines(multiThreadedOut.toPath()));
 		}
 		return result;
 	}
 }
-

@@ -16,24 +16,44 @@ public class CoordinatorClient {
 
     public void setSource(String sourceFilePath) {
         CoordinatorImplOuterClass.SetSourceRequest request = CoordinatorImplOuterClass.SetSourceRequest.newBuilder().setInputFile(sourceFilePath).build();
-        CoordinatorImplOuterClass.SetSourceResponse response;
         try {
-            response = blockingStub.setSource(request);
+            CoordinatorImplOuterClass.SetSourceResponse response = blockingStub.setSource(request);
+            System.out.println("Source file path set to: " + response.getSourceFilePath());
         } catch (StatusRuntimeException e) {
             System.err.println("RPC failed: " + e.getStatus());
-            return;
         }
-        System.out.println("Source file path set to: " + response.getSourceFilePath());
+    }
+
+    public void startComputationWithCustomDelimiter(String destinationFilePath, String delimiter) {
+        CoordinatorImplOuterClass.StartComputationCustDelimiterRequest request = CoordinatorImplOuterClass.StartComputationCustDelimiterRequest.newBuilder()
+                .setDestinationFilePath(destinationFilePath)
+                .setDelimiter(delimiter)
+                .build();
+        try {
+            CoordinatorImplOuterClass.ComputationResponse response = blockingStub.startComputationCustDelimiter(request);
+            System.out.println("Computation success: " + response.getIsSuccess());
+            System.out.println("Message: " + response.getMessage());
+        } catch (StatusRuntimeException e) {
+            System.err.println("RPC failed: " + e.getStatus());
+        }
     }
 
     public static void main(String[] args) throws Exception {
-        String target = "localhost:50059";
+        if (args.length < 3) {
+            System.err.println("Usage: CoordinatorClient <source file path> <destination file path> <delimiter>");
+            System.exit(1);
+        }
 
-        ManagedChannel channel = Grpc.newChannelBuilder(target, InsecureChannelCredentials.create())
-                .build();
+        String sourceFilePath = args[0];
+        String destinationFilePath = args[1];
+        String delimiter = args[2];
+
+        String target = "localhost:50059";
+        ManagedChannel channel = Grpc.newChannelBuilder(target, InsecureChannelCredentials.create()).build();
         try {
             CoordinatorClient client = new CoordinatorClient(channel);
-            client.setSource("path/to/source/file");
+            client.setSource(sourceFilePath);
+            client.startComputationWithCustomDelimiter(destinationFilePath, delimiter);
         } finally {
             channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
         }

@@ -8,7 +8,7 @@ public class ComputationImpl extends ComputerEngineImpl {
     private DataSystem dataSystem;
 
     public ComputationImpl(String sourceFilePath) {
-        this.dataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testOutput.csv");
+        this.dataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testoutput.csv");
     }
 
     public void setDataSystem(DataSystem dataSystem) {

@@ -2,43 +2,24 @@ import Implementations.ComputationImpl;
 import Implementations.CoordinatorImpl;
 import Implementations.DataSystem;
 import org.junit.jupiter.api.Test;
-
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 public class TestIntegration {
-
     @Test
-    public void testStartComputation() {
-        try {
-            String inputFilePath = "test/dataTests/testInput.csv";
-            String outputFilePath = "test/dataTests/testOutput.csv";
+    public void testStartComputation() throws IOException {
+        String filePath = "source/to/file";
+        DataSystem testDataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testoutput.csv");
 
-            DataSystem testDataSystem = new DataSystem(inputFilePath, outputFilePath);
+        ComputationImpl computerEngine = new ComputationImpl(filePath);
+        computerEngine.setDataSystem(testDataSystem);
 
-            ComputationImpl computationEngine = new ComputationImpl(inputFilePath);
-            computationEngine.setDataSystem(testDataSystem);
+        CoordinatorImpl coordinator = new CoordinatorImpl(testDataSystem);
+        computerEngine.receiveDataForComputation();
+        long[][] computationResult = computerEngine.performDigitFactorial();
 
-            String serverAddress = "localhost";
-            int serverPort = 50058;
-            CoordinatorImpl coordinator = new CoordinatorImpl(serverAddress, serverPort);
-
-            coordinator.setSource(inputFilePath);
-
-            computationEngine.receiveDataForComputation();
-            long[][] computationResult = computationEngine.performDigitFactorial();
-
-            boolean userToComputerResult = coordinator.startComputation(outputFilePath);
-
-            assertNotNull(computationResult, "Computation result should not be null");
-            assertTrue(userToComputerResult, "Processing user request failed");
-        } catch (IOException e) {
-            e.printStackTrace();
-            fail("IOException was thrown");
-        }
+        boolean userToComputerResult = coordinator.startComputation(testDataSystem.outPutFilePath);
+        assertNotNull(computationResult, "Computation result should not be null");
+        assertTrue(userToComputerResult, "Processing user request failed");
     }
-
-
 }
-
