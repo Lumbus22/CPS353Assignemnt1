@@ -18,20 +18,24 @@ public class CoordinatorClient {
         CoordinatorImplOuterClass.SetSourceRequest request = CoordinatorImplOuterClass.SetSourceRequest.newBuilder().setInputFile(sourceFilePath).build();
         try {
             CoordinatorImplOuterClass.SetSourceResponse response = blockingStub.setSource(request);
-            System.out.println("Source file path set to: " + response.getSourceFilePath());
+            System.out.println("Received setSource response from server: Source file path set to: " + response.getSourceFilePath());
         } catch (StatusRuntimeException e) {
             System.err.println("RPC failed: " + e.getStatus());
         }
     }
 
     public void startComputationWithCustomDelimiter(String destinationFilePath, String delimiter) {
+        System.out.println("Starting computation with destination file path set to: " + destinationFilePath);
+
+
         CoordinatorImplOuterClass.StartComputationCustDelimiterRequest request = CoordinatorImplOuterClass.StartComputationCustDelimiterRequest.newBuilder()
                 .setDestinationFilePath(destinationFilePath)
                 .setDelimiter(delimiter)
                 .build();
         try {
             CoordinatorImplOuterClass.ComputationResponse response = blockingStub.startComputationCustDelimiter(request);
-            System.out.println("Computation success: " + response.getIsSuccess());
+            // Log the response from the server
+            System.out.println("Received startComputationWithCustomDelimiter response from server: Computation success: " + response.getIsSuccess());
             System.out.println("Message: " + response.getMessage());
         } catch (StatusRuntimeException e) {
             System.err.println("RPC failed: " + e.getStatus());

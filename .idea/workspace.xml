@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0284059-a1a5-480d-97d6-662773baf79d" name="Changes" comment="Updated Implementations, updated CoordinatorClient, added DS client, All Tests pass">
+    <list default="true" id="d0284059-a1a5-480d-97d6-662773baf79d" name="Changes" comment="Fixed checkstyle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coordinator/CoordinatorClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coordinator/CoordinatorClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/coordinator/CoordinatorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coordinator/CoordinatorServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/dataTests/testInput.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataTests/testInput.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/dataTests/testoutput.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataTests/testoutput.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +135,7 @@
     <configuration name="CoordinatorClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="coordinator.CoordinatorClient" />
       <module name="gradle-8.6.main" />
-      <option name="PROGRAM_PARAMETERS" value="test/dataTests/testInput.csv test/dataTests/testoutput.csv &quot;X&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="test/dataTests/testInput.csv test/dataTests/testoutput.csv &quot;o&quot;" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="coordinator.*" />
@@ -143,12 +146,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CoordinatorImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Implementations.CoordinatorImpl" />
+    <configuration name="CoordinatorServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="coordinator.CoordinatorServer" />
       <module name="gradle-8.6.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Implementations.*" />
+          <option name="PATTERN" value="coordinator.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -219,11 +222,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CoordinatorClient" />
+        <item itemvalue="Application.CoordinatorServer" />
         <item itemvalue="Gradle.TestComputation" />
         <item itemvalue="Gradle.TestComputation.testReceiveDataForComputation" />
         <item itemvalue="Application.ComputationImpl" />
-        <item itemvalue="Application.CoordinatorImpl" />
-        <item itemvalue="Application.CoordinatorClient" />
       </list>
     </recent_temporary>
   </component>
@@ -251,7 +254,7 @@
       <workItem from="1712712161822" duration="7898000" />
       <workItem from="1712793136900" duration="448000" />
       <workItem from="1712793616953" duration="413000" />
-      <workItem from="1712794095403" duration="7779000" />
+      <workItem from="1712794095403" duration="9604000" />
     </task>
     <task id="LOCAL-00001" summary="I love gradle">
       <option name="closed" value="true" />
@@ -389,7 +392,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712853696916</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Fixed checkstyle">
+      <option name="closed" value="true" />
+      <created>1712853872907</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1712853872907</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,6 +426,7 @@
     <MESSAGE value="Updated tests" />
     <MESSAGE value="Fixed most of the tests" />
     <MESSAGE value="Updated Implementations, updated CoordinatorClient, added DS client, All Tests pass" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Implementations, updated CoordinatorClient, added DS client, All Tests pass" />
+    <MESSAGE value="Fixed checkstyle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed checkstyle" />
   </component>
 </project>
