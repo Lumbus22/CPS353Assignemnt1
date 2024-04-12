@@ -40,7 +40,7 @@ public class ComputationImpl extends ComputerEngineImpl {
                 results[0][i] = Long.parseLong(numberStrings[i]);
                 results[1][i] = digitFactorialSum(numberStrings[i]);
             } catch (NumberFormatException e) {
-                System.err.println("Invalid number format " + e.getMessage());
+                System.err.println("Invalid number format: " + e.getMessage());
                 results[0][i] = 0;
                 results[1][i] = -1;
             }

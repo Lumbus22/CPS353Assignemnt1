@@ -30,7 +30,7 @@ public class DataSystemImpl extends DataSystemGrpc.DataSystemImplBase {
             responseObserver.onCompleted();
         } catch (IOException e) {
             e.printStackTrace();
-            responseObserver.onError(io.grpc.Status.INTERNAL.withDescription("File read error").asRuntimeException());
+            responseObserver.onError(io.grpc.Status.INTERNAL.withDescription("File read error.").asRuntimeException());
         }
     }
 
@@ -52,7 +52,7 @@ public class DataSystemImpl extends DataSystemGrpc.DataSystemImplBase {
             responseObserver.onCompleted();
         } catch (IOException e) {
             e.printStackTrace();
-            responseObserver.onError(io.grpc.Status.INTERNAL.withDescription("File write error").asRuntimeException());
+            responseObserver.onError(io.grpc.Status.INTERNAL.withDescription("File write error.").asRuntimeException());
         }
     }
 }

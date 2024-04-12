@@ -16,12 +16,12 @@ public class DataSystemServer {
                 .build()
                 .start();
 
-        System.out.println("Server started, listening on " + port);
+        System.out.println("Server started, listening on port:" + port);
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            System.err.println("*** shutting down gRPC server since JVM is shutting down");
+            System.err.println("*** shutting down gRPC server since JVM is shutting down...");
             DataSystemServer.this.stop();
-            System.err.println("*** server shut down");
+            System.err.println("*** server shut down.");
         }));
     }
 
