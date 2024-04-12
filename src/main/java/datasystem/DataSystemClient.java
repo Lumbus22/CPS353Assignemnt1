@@ -37,7 +37,7 @@ public class DataSystemClient {
                 .build();
         try {
             Datasystem.WriteResponse response = blockingStub.writeToFile(request);
-            System.out.println("Received writeToFile response from server: Success = " + response.getSuccess());
+            System.out.println("Received writeToFile response from server. Success = " + response.getSuccess());
         } catch (StatusRuntimeException e) {
             System.err.println("RPC failed: " + e.getStatus());
         }

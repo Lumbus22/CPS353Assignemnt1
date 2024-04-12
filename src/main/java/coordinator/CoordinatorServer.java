@@ -18,12 +18,12 @@ public class CoordinatorServer {
                 .addService(ProtoReflectionService.newInstance()) // Optional: for reflection and tooling support
                 .build()
                 .start();
-        System.out.println("Server started, listening on " + port);
+        System.out.println("Server started, listening on port:" + port);
 
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
             public void run() {
-                System.err.println("*** shutting down gRPC server since JVM is shutting down");
+                System.err.println("*** shutting down gRPC server since JVM is shutting down...");
                 try {
                     if (server != null) {
                         server.shutdown().awaitTermination(30, TimeUnit.SECONDS);
@@ -31,7 +31,7 @@ public class CoordinatorServer {
                 } catch (InterruptedException e) {
                     e.printStackTrace(System.err);
                 }
-                System.err.println("*** server shut down");
+                System.err.println("*** server shut down.");
             }
         });
     }
