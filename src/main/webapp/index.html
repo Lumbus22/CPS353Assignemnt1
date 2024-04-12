@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computation Frontend</title>
+</head>
+<body>
+<h1>Number Computation</h1>
+<form id="computationForm">
+    <div>
+        <label for="fileInput">Upload file:</label>
+        <input type="file" id="fileInput">
+        <small>Or enter numbers below</small>
+    </div>
+    <div>
+        <label for="numberInput">Enter numbers (comma-separated):</label>
+        <input type="text" id="numberInput">
+    </div>
+    <div>
+        <label for="outputFileName">Output file name:</label>
+        <input type="text" id="outputFileName" required>
+    </div>
+    <div>
+        <label for="delimiterInput">Delimiter (optional):</label>
+        <input type="text" id="delimiterInput">
+    </div>
+    <button type="button" id="submitBtn">Compute</button>
+</form>
+
+<div id="statusMessage" style="margin-top: 20px;"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

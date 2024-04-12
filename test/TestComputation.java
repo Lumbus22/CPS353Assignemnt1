@@ -1,3 +1,5 @@
+import Implementations.ComputationImpl;
+import Implementations.DataSystem;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -17,7 +19,7 @@ public class TestComputation {
 
     @Test
     public void testReceiveDataForComputation() throws IOException {
-        String[] numberStrings = {"0", "2", "3", "5"};
+        String[] numberStrings = {"22", "23", "24", "25", "26"};
 
         String[] result = computation.receiveDataForComputation();
 

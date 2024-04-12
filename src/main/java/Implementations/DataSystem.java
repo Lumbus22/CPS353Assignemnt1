@@ -1,3 +1,5 @@
+package Implementations;
+
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -64,7 +66,7 @@ public class DataSystem implements DataSystemInterface {
 }
 
 
-//    //currently is not usable as the inuput and output destinations are set by the constructor
+//    //currently is not usable as the input and output destinations are set by the constructor
 //
 //
 //    public void setDestination(String destinationFilePath) {

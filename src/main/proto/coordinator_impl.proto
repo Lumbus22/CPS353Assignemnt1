@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package coordinator;
+
+message DataSystem {
+  string testInputPath = 1;
+  string testOutputPath = 2;
+}
+
+message CoordinatorImpl {
+  string sourceFilePath = 1;
+  DataSystem dataSystem = 2;
+}
+
+service CoordinatorService {
+  rpc StartComputation(SetSourceRequest) returns (ComputationResponse);
+  rpc StartComputationCustDelimiter(StartComputationCustDelimiterRequest) returns (ComputationResponse);
+  rpc SetSource(SetSourceRequest) returns (SetSourceResponse);
+}
+
+message SetSourceRequest {
+  string inputFile = 1;
+}
+
+message SetSourceResponse {
+  string sourceFilePath = 1;
+}
+
+message StartComputationRequest {
+  string destinationFilePath = 1;
+}
+
+message StartComputationCustDelimiterRequest {
+  string destinationFilePath = 1;
+  string delimiter = 2;
+}
+
+message ComputationResponse {
+  bool isSuccess = 1;
+  string message = 2;
+  string computationResult = 3;
+}

@@ -1,5 +1,6 @@
-import java.io.IOException;
+package Implementations;
 
+import java.io.IOException;
 import Interfaces.CoordinatorInterface;
 
 public class CoordinatorImpl implements CoordinatorInterface {
@@ -7,24 +8,20 @@ public class CoordinatorImpl implements CoordinatorInterface {
   private String sourceFilePath;
   private DataSystem dataSystem;
 
-    // Constructor that takes sourceFilePath and initializes DataSystem
-    public CoordinatorImpl() {
-      this.dataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testOutput.csv");
+  public CoordinatorImpl() {
+    this.dataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testoutput.csv");
   }
 
-  // Additional constructor for testing, allowing dependency injection
   public CoordinatorImpl(DataSystem dataSystem) {
-      this.dataSystem = dataSystem;
+    this.dataSystem = dataSystem;
   }
-
-  // add functionality to let user create their own output file at some point
 
   public static void main(String[] args) {
     CoordinatorImpl coordinator = new CoordinatorImpl();
-    String sourceFilePath = "ComputerEngine/document.csv";
+    String sourceFilePath = "test/dataTests/testInput.csv";
     coordinator.setSource(sourceFilePath);
-    String destinationFilePath = "ComputerEngine/document2.csv";
-    boolean isSuccess = coordinator.startComputationCustDelimiter(destinationFilePath, "/");
+    String destinationFilePath = "test/dataTests/testoutput.csv";
+    boolean isSuccess = coordinator.startComputationCustDelimiter(destinationFilePath, "P");
     if (isSuccess) {
       System.out.println("Computation completed successfully and results are written to " + destinationFilePath);
     } else {
@@ -37,8 +34,8 @@ public class CoordinatorImpl implements CoordinatorInterface {
     try {
       this.dataSystem.readFromFile();
       ComputationImpl computation = new ComputationImpl(sourceFilePath);
-      computation.receiveDataForComputation();
-      long[][] results = computation.performDigitFactorial();
+      String[] numberStrings = computation.receiveDataForComputation();
+      long[][] results = computation.performDigitFactorial(numberStrings);
       this.dataSystem.writeToFile(results, null);
       return true;
     } catch (IOException e) {
@@ -57,8 +54,8 @@ public class CoordinatorImpl implements CoordinatorInterface {
       this.dataSystem = new DataSystem(sourceFilePath, destinationFilePath);
       this.dataSystem.readFromFile();
       ComputationImpl computation = new ComputationImpl(sourceFilePath);
-      computation.receiveDataForComputation();
-      long[][] results = computation.performDigitFactorial();
+      String[] numberStrings = computation.receiveDataForComputation();
+      long[][] results = computation.performDigitFactorial(numberStrings);
       this.dataSystem.writeToFile(results, delimiter);
       return true;
     } catch (IOException e) {
@@ -75,3 +72,5 @@ public class CoordinatorImpl implements CoordinatorInterface {
   }
 
 }
+
+
