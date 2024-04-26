@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0284059-a1a5-480d-97d6-662773baf79d" name="Changes" comment="OH MY GOD THE COORDINATOR CLIENT WORKS">
-      <change afterPath="$PROJECT_DIR$/test/dataTests/dsInput.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataTests/dsOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/TestBenchmark.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datasystem/DataSystemClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasystem/DataSystemClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Implementations/ComputationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Implementations/ComputationImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestComputation.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestComputation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestIntegration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/dataTests/testInput.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataTests/testInput.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/dataTests/testoutput.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataTests/testoutput.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,20 +92,22 @@
     "Gradle.CPS353Project [:DataSystemClient.main()].executor": "Run",
     "Gradle.CPS353Project [:DataSystemServer.main()].executor": "Run",
     "Gradle.CPS353Project [:TestCoordinator.main()].executor": "Run",
+    "Gradle.TestBenchmark.executor": "Run",
     "Gradle.TestComputation.executor": "Run",
     "Gradle.TestComputation.testReceiveDataForComputation.executor": "Run",
     "Gradle.TestCoordinator.executor": "Run",
     "Gradle.TestCoordinator.testCoordinator.executor": "Run",
     "Gradle.TestDataSystem.executor": "Run",
     "Gradle.TestIntegration.executor": "Run",
+    "Gradle.TestIntegration.testStartComputation.executor": "Run",
     "Gradle.TestMultiUser.executor": "Run",
     "Gradle.TestUser.executor": "Run",
     "Gradle.TestUser.testComputationCustomDelimiter.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "#70 on development",
+    "git-widget-placeholder": "development",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/davidvenuto/Desktop/CPS353Project",
+    "last_opened_file_path": "/Users/davidvenuto/Documents/GitHub/CPS353Project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -118,27 +124,13 @@
       <recent name="coordinator" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DataSystemClient">
-    <configuration name="CoordinatorClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="coordinator.CoordinatorClient" />
-      <module name="gradle-8.6.main" />
-      <option name="PROGRAM_PARAMETERS" value="test/dataTests/testInput.csv test/dataTests/testoutput.csv &quot;o&quot;" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="coordinator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CoordinatorServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="coordinator.CoordinatorServer" />
+  <component name="RunManager" selected="Gradle.TestBenchmark">
+    <configuration name="ComputationImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Implementations.ComputationImpl" />
       <module name="gradle-8.6.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="coordinator.*" />
+          <option name="PATTERN" value="Implementations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -158,6 +150,30 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="TestBenchmark" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestBenchmark&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
     </configuration>
     <configuration name="TestComputation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -183,7 +199,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="TestComputation.testReceiveDataForComputation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestIntegration.testStartComputation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -196,7 +212,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;TestComputation.testReceiveDataForComputation&quot;" />
+            <option value="&quot;TestIntegration.testStartComputation&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -222,11 +238,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DataSystemClient" />
+        <item itemvalue="Gradle.TestBenchmark" />
         <item itemvalue="Gradle.TestComputation" />
-        <item itemvalue="Application.CoordinatorClient" />
-        <item itemvalue="Application.CoordinatorServer" />
-        <item itemvalue="Gradle.TestComputation.testReceiveDataForComputation" />
+        <item itemvalue="Application.ComputationImpl" />
+        <item itemvalue="Gradle.TestIntegration.testStartComputation" />
+        <item itemvalue="Application.DataSystemClient" />
       </list>
     </recent_temporary>
   </component>
@@ -255,6 +271,7 @@
       <workItem from="1712793136900" duration="448000" />
       <workItem from="1712793616953" duration="413000" />
       <workItem from="1712794095403" duration="10433000" />
+      <workItem from="1714062086279" duration="4506000" />
     </task>
     <task id="LOCAL-00001" summary="I love gradle">
       <option name="closed" value="true" />

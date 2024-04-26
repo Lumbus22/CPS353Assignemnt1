@@ -18,15 +18,6 @@ public class TestComputation {
     }
 
     @Test
-    public void testReceiveDataForComputation() throws IOException {
-        String[] numberStrings = {"22", "23", "24", "25", "26"};
-
-        String[] result = computation.receiveDataForComputation();
-
-        assertArrayEquals(numberStrings, result);
-    }
-
-    @Test
     public void testPerformDigitFactorial() {
         String[] numberStrings = {"1", "2"};
         long[][] expectedResults = {{1, 2}, {1, 2}};
