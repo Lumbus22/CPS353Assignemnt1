@@ -9,7 +9,8 @@ public class ComputationImpl extends ComputerEngineImpl {
     private static final long[] factorialCache = new long[10];
 
     static {
-        factorialCache[0] = 1;
+        // Initialize the cache by computing factorials of digits 0 through 9
+        factorialCache[0] = 1; // factorial of 0
         for (int i = 1; i < factorialCache.length; i++) {
             factorialCache[i] = factorialCache[i - 1] * i;
         }

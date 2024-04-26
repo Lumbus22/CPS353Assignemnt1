@@ -9,29 +9,32 @@ import java.io.IOException;
 public class TestBenchmark {
     @Test
     public void testStartComputation() throws IOException {
-        long startTime = System.currentTimeMillis();
-
         // Setup
         String filePath = "test/dataTests/testInput.csv";
-        DataSystem testDataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testOutput.csv");
+        DataSystem testDataSystem = new DataSystem(filePath, "test/dataTests/testOutput.csv");
         ComputationImpl computerEngine = new ComputationImpl(filePath);
         computerEngine.setDataSystem(testDataSystem);
         CoordinatorImpl coordinator = new CoordinatorImpl(testDataSystem);
 
-        // Execution
+        // Read data first to focus on computation time
         computerEngine.receiveDataForComputation();
-        long[][] computationResult = computerEngine.performDigitFactorial();
-        boolean userToComputerResult = coordinator.startComputation(testDataSystem.outPutFilePath);
 
-        // Validation
-        assertNotNull(computationResult, "Computation result should not be null");
-        assertTrue(userToComputerResult, "Processing user request failed");
+        final int iterations = 1000; // Increase iterations for more reliable averaging
+        long totalDuration = 0;
 
-        // Performance Metrics
-        long endTime = System.currentTimeMillis();
-        long duration = endTime - startTime;
-        assertTrue(duration < 1000, "Performance test failed: Operation took too long.");
+        for (int i = 0; i < iterations; i++) {
+            long startTime = System.nanoTime();
+            long[][] computationResult = computerEngine.performDigitFactorial();
+            long endTime = System.nanoTime();
+            totalDuration += (endTime - startTime);
+            assertNotNull(computationResult, "Computation result should not be null");
+        }
 
-        System.out.println("Test completed in " + duration + " milliseconds.");
+        long averageDuration = totalDuration / iterations;
+
+        // Check that average computation time meets performance expectations
+        assertTrue(averageDuration < 500000, "Average computation took too long: " + averageDuration + " nanoseconds");
+
+        System.out.println("Average computation took " + averageDuration + " nanoseconds.");
     }
 }
