@@ -1,11 +1,20 @@
 package Implementations;
 
 import java.io.IOException;
-
 import JavaAPIs.ComputerEngineImpl;
 
 public class ComputationImpl extends ComputerEngineImpl {
     private DataSystem dataSystem;
+    // Cache for storing factorials of digits 0-9
+    private static final long[] factorialCache = new long[10];
+
+    static {
+        // Initialize the cache by computing factorials of digits 0 through 9
+        factorialCache[0] = 1; // factorial of 0
+        for (int i = 1; i < factorialCache.length; i++) {
+            factorialCache[i] = factorialCache[i - 1] * i;
+        }
+    }
 
     public ComputationImpl(String sourceFilePath) {
         this.dataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testoutput.csv");
@@ -14,7 +23,7 @@ public class ComputationImpl extends ComputerEngineImpl {
     public void setDataSystem(DataSystem dataSystem) {
         this.dataSystem = dataSystem;
     }
-    
+
     public static void main(String[] args) throws IOException {
         String sourceFilePath = "test/dataTests/testInput.csv";
         ComputationImpl calculator = new ComputationImpl(sourceFilePath);
@@ -22,7 +31,7 @@ public class ComputationImpl extends ComputerEngineImpl {
         long[][] results = calculator.performDigitFactorial(numberStrings);
         calculator.printResults(results);
     }
-    
+
     public String[] receiveDataForComputation() throws IOException {
         dataSystem.readFromFile();
         return dataSystem.getNumberStrings();
@@ -30,7 +39,6 @@ public class ComputationImpl extends ComputerEngineImpl {
 
     public long[][] performDigitFactorial(String[] numberStrings) {
         long[][] results = new long[2][numberStrings.length];
-        //** REMOVE BOM FROM INPUT FILE IF NECESSARY **//
         if (numberStrings.length > 0 && !numberStrings[0].isEmpty() && numberStrings[0].charAt(0) == '\uFEFF') {
             numberStrings[0] = numberStrings[0].substring(1);
         }
@@ -48,19 +56,12 @@ public class ComputationImpl extends ComputerEngineImpl {
         return results;
     }
 
-    private static long factorial(int n) {
-        long result = 1;
-        for (int i = 2; i <= n; i++) {
-            result *= i;
-        }
-        return result;
-    }
-
     private static long digitFactorialSum(String numberString) {
         long sum = 0;
         for (char digit : numberString.toCharArray()) {
             int digitValue = Character.getNumericValue(digit);
-            sum += factorial(digitValue);
+            // Use cached factorial values instead of computing them on-the-fly
+            sum += factorialCache[digitValue];
         }
         return sum;
     }

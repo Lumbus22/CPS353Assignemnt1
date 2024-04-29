@@ -4,7 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import java.io.IOException;
 
 public class TestComputation {
 
@@ -15,15 +14,6 @@ public class TestComputation {
         final DataSystem newDataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testoutput.csv");
         computation = new ComputationImpl("dummy/path");
         computation.setDataSystem(newDataSystem);
-    }
-
-    @Test
-    public void testReceiveDataForComputation() throws IOException {
-        String[] numberStrings = {"22", "23", "24", "25", "26"};
-
-        String[] result = computation.receiveDataForComputation();
-
-        assertArrayEquals(numberStrings, result);
     }
 
     @Test

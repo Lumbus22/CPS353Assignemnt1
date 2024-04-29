@@ -8,7 +8,7 @@ import java.io.IOException;
 public class TestIntegration {
     @Test
     public void testStartComputation() throws IOException {
-        String filePath = "source/to/file";
+        String filePath = "test/dataTests/testInput.csv";
         DataSystem testDataSystem = new DataSystem("test/dataTests/testInput.csv", "test/dataTests/testoutput.csv");
 
         ComputationImpl computerEngine = new ComputationImpl(filePath);

@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0284059-a1a5-480d-97d6-662773baf79d" name="Changes" comment="OH MY GOD THE COORDINATOR CLIENT WORKS">
-      <change afterPath="$PROJECT_DIR$/test/dataTests/dsInput.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataTests/dsOutput.txt" afterDir="false" />
+    <list default="true" id="d0284059-a1a5-480d-97d6-662773baf79d" name="Changes" comment="Added caching">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datasystem/DataSystemClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datasystem/DataSystemClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/dataTests/testInput.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataTests/testInput.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,68 +75,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Gradle.CPS353Project [:ComputationImpl.main()].executor": "Run",
-    "Gradle.CPS353Project [:CoordinatorClient.main()].executor": "Run",
-    "Gradle.CPS353Project [:CoordinatorImpl.main()].executor": "Run",
-    "Gradle.CPS353Project [:CoordinatorServer.main()].executor": "Run",
-    "Gradle.CPS353Project [:DataSystemClient.main()].executor": "Run",
-    "Gradle.CPS353Project [:DataSystemServer.main()].executor": "Run",
-    "Gradle.CPS353Project [:TestCoordinator.main()].executor": "Run",
-    "Gradle.TestComputation.executor": "Run",
-    "Gradle.TestComputation.testReceiveDataForComputation.executor": "Run",
-    "Gradle.TestCoordinator.executor": "Run",
-    "Gradle.TestCoordinator.testCoordinator.executor": "Run",
-    "Gradle.TestDataSystem.executor": "Run",
-    "Gradle.TestIntegration.executor": "Run",
-    "Gradle.TestMultiUser.executor": "Run",
-    "Gradle.TestUser.executor": "Run",
-    "Gradle.TestUser.testComputationCustomDelimiter.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "#70 on development",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/davidvenuto/Desktop/CPS353Project",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Gradle.CPS353Project [:ComputationImpl.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CPS353Project [:CoordinatorClient.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CPS353Project [:CoordinatorImpl.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CPS353Project [:CoordinatorServer.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CPS353Project [:DataSystemClient.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CPS353Project [:DataSystemServer.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CPS353Project [:TestCoordinator.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestBenchmark.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestComputation.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestComputation.testReceiveDataForComputation.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestCoordinator.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestCoordinator.testCoordinator.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestDataSystem.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestIntegration.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestIntegration.testStartComputation.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestMultiUser.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestUser.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestUser.testComputationCustomDelimiter.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/davidvenuto/Documents/GitHub/CPS353Project&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="coordinator" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DataSystemClient">
-    <configuration name="CoordinatorClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="coordinator.CoordinatorClient" />
-      <module name="gradle-8.6.main" />
-      <option name="PROGRAM_PARAMETERS" value="test/dataTests/testInput.csv test/dataTests/testoutput.csv &quot;o&quot;" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="coordinator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CoordinatorServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="coordinator.CoordinatorServer" />
+  <component name="RunManager" selected="Gradle.TestBenchmark">
+    <configuration name="ComputationImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Implementations.ComputationImpl" />
       <module name="gradle-8.6.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="coordinator.*" />
+          <option name="PATTERN" value="Implementations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -158,6 +144,30 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="TestBenchmark" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;TestBenchmark&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
     </configuration>
     <configuration name="TestComputation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -183,7 +193,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="TestComputation.testReceiveDataForComputation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestIntegration.testStartComputation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -196,7 +206,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;TestComputation.testReceiveDataForComputation&quot;" />
+            <option value="&quot;TestIntegration.testStartComputation&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -207,26 +217,13 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="gradle-8.6" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="gradle-8.6" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DataSystemClient" />
+        <item itemvalue="Gradle.TestBenchmark" />
         <item itemvalue="Gradle.TestComputation" />
-        <item itemvalue="Application.CoordinatorClient" />
-        <item itemvalue="Application.CoordinatorServer" />
-        <item itemvalue="Gradle.TestComputation.testReceiveDataForComputation" />
+        <item itemvalue="Application.ComputationImpl" />
+        <item itemvalue="Gradle.TestIntegration.testStartComputation" />
+        <item itemvalue="Application.DataSystemClient" />
       </list>
     </recent_temporary>
   </component>
@@ -255,6 +252,7 @@
       <workItem from="1712793136900" duration="448000" />
       <workItem from="1712793616953" duration="413000" />
       <workItem from="1712794095403" duration="10433000" />
+      <workItem from="1714062086279" duration="6240000" />
     </task>
     <task id="LOCAL-00001" summary="I love gradle">
       <option name="closed" value="true" />
@@ -416,7 +414,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712855928364</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Added caching">
+      <option name="closed" value="true" />
+      <created>1714143521439</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1714143521440</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Added caching">
+      <option name="closed" value="true" />
+      <created>1714143570051</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1714143570051</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,6 +458,7 @@
     <MESSAGE value="Updated Implementations, updated CoordinatorClient, added DS client, All Tests pass" />
     <MESSAGE value="Fixed checkstyle" />
     <MESSAGE value="OH MY GOD THE COORDINATOR CLIENT WORKS" />
-    <option name="LAST_COMMIT_MESSAGE" value="OH MY GOD THE COORDINATOR CLIENT WORKS" />
+    <MESSAGE value="Added caching" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added caching" />
   </component>
 </project>
