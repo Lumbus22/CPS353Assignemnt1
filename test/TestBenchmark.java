@@ -12,7 +12,7 @@ public class TestBenchmark {
     public void testStartComputation() throws IOException {
         // Setup
         String filePath = "test/dataTests/testInput.csv";
-        DataSystem testDataSystem = new DataSystem(filePath, "test/dataTests/testOutput.csv");
+        DataSystem testDataSystem = new DataSystem(filePath, "test/dataTests/testoutput.csv");
         ComputationImpl computerEngine = new ComputationImpl(filePath);
         computerEngine.setDataSystem(testDataSystem);
         CoordinatorImpl coordinator = new CoordinatorImpl(testDataSystem);
