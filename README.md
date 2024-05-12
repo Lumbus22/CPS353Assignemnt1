@@ -6,3 +6,6 @@ We used a file with 1000 numbers from 1-1000. The file originally tested at 106 
 After implementing caching, the time was reduced to blank, with a time saving of blank%.
 
 ![System Diagram](https://github.com/Lumbus22/CPS353Project/blob/main/CPS353SystemDiagram.pdf/?raw=true)
+
+5 Whys:
+https://github.com/Lumbus22/CPS353Project/tree/main/documentation
