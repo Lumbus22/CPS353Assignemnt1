@@ -1,0 +1,16 @@
+Problem: Poor Integration of Code developed separately.
+
+1. Why?
+A: Lack of communication on the scope of the developed code. Or there was a difference in coding conventions.
+
+2. Why was there a difference in coding conventions?
+A: Difference in coding conventions can come from a lack of experience or different coding backgrounds.
+
+3. Why does this limit the integration of our Code? 
+A: Different conventions can make understanding code more difficult.  
+
+4: Why not use the same conventions? 
+A: It would take time to teach each individual new different convention. 
+
+5: Why not use pair programing instead of individual coding? 
+A: Hmm... Dunno Seems fine.
